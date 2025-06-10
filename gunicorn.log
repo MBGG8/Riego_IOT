@@ -1,174 +1,1524 @@
 nohup: ignoring input
-[2025-06-06 18:21:06 -0500] [432761] [INFO] Starting gunicorn 23.0.0
-[2025-06-06 18:21:06 -0500] [432761] [INFO] Listening at: http://0.0.0.0:8000 (432761)
-[2025-06-06 18:21:06 -0500] [432761] [INFO] Using worker: sync
-[2025-06-06 18:21:06 -0500] [432762] [INFO] Booting worker with pid: 432762
-[2025-06-06 18:21:06 -0500] [432763] [INFO] Booting worker with pid: 432763
-[2025-06-06 18:21:06 -0500] [432764] [INFO] Booting worker with pid: 432764
-[2025-06-06 19:59:22 -0500] [432761] [INFO] Handling signal: hup
-[2025-06-06 19:59:23 -0500] [432761] [INFO] Hang up: Master
-[2025-06-06 19:59:23 -0500] [436789] [INFO] Booting worker with pid: 436789
-[2025-06-06 19:59:23 -0500] [436790] [INFO] Booting worker with pid: 436790
-[2025-06-06 19:59:23 -0500] [436791] [INFO] Booting worker with pid: 436791
-[2025-06-06 19:59:23 -0500] [432764] [INFO] Worker exiting (pid: 432764)
-[2025-06-06 19:59:23 -0500] [432763] [INFO] Worker exiting (pid: 432763)
-[2025-06-06 19:59:23 -0500] [432762] [INFO] Worker exiting (pid: 432762)
-[2025-06-06 19:59:24 -0500] [432761] [ERROR] Worker (pid:432763) was sent SIGTERM!
-[2025-06-06 19:59:24 -0500] [432761] [ERROR] Worker (pid:432762) was sent SIGTERM!
-[2025-06-06 19:59:24 -0500] [432761] [ERROR] Worker (pid:432764) was sent SIGTERM!
-[2025-06-06 20:12:43 -0500] [432761] [INFO] Handling signal: hup
-[2025-06-06 20:12:43 -0500] [432761] [INFO] Hang up: Master
-[2025-06-06 20:12:43 -0500] [437194] [INFO] Booting worker with pid: 437194
-[2025-06-06 20:12:43 -0500] [437195] [INFO] Booting worker with pid: 437195
-[2025-06-06 20:12:43 -0500] [436789] [INFO] Worker exiting (pid: 436789)
-[2025-06-06 20:12:43 -0500] [436790] [INFO] Worker exiting (pid: 436790)
-[2025-06-06 20:12:43 -0500] [436791] [INFO] Worker exiting (pid: 436791)
-[2025-06-06 20:12:43 -0500] [437196] [INFO] Booting worker with pid: 437196
-[2025-06-06 20:12:45 -0500] [432761] [ERROR] Worker (pid:436791) was sent SIGTERM!
-[2025-06-06 20:12:45 -0500] [432761] [ERROR] Worker (pid:436790) was sent SIGTERM!
-[2025-06-06 20:12:45 -0500] [432761] [ERROR] Worker (pid:436789) was sent SIGTERM!
-[2025-06-06 21:55:48 -0500] [437195] [WARNING] Invalid request from ip=199.45.155.89: Invalid HTTP Version: (2, 0)
-[2025-06-06 21:58:40 -0500] [437195] [WARNING] Invalid request from ip=206.168.34.65: Invalid HTTP Version: (2, 0)
-[2025-06-07 04:48:50 -0500] [437195] [WARNING] Invalid request from ip=18.220.154.78: Invalid HTTP request line: 'SSH-2.0-Go'
-[2025-06-07 18:40:20 -0500] [437196] [WARNING] Invalid request from ip=206.168.34.218: Invalid HTTP Version: (2, 0)
-[2025-06-08 00:22:18 -0500] [437194] [WARNING] Invalid request from ip=167.94.138.48: Invalid HTTP Version: (2, 0)
-[2025-06-08 00:23:14 -0500] [432761] [CRITICAL] WORKER TIMEOUT (pid:437195)
-[2025-06-08 00:23:15 -0500] [437195] [ERROR] Error handling request (no URI read)
+[2025-06-10 14:59:59 -0500] [665815] [INFO] Starting gunicorn 23.0.0
+[2025-06-10 14:59:59 -0500] [665815] [INFO] Listening at: http://0.0.0.0:8000 (665815)
+[2025-06-10 14:59:59 -0500] [665815] [INFO] Using worker: sync
+[2025-06-10 14:59:59 -0500] [665816] [INFO] Booting worker with pid: 665816
+[2025-06-10 14:59:59 -0500] [665817] [INFO] Booting worker with pid: 665817
+[2025-06-10 14:59:59 -0500] [665818] [INFO] Booting worker with pid: 665818
+[2025-06-10 15:03:32 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:03:32 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:03:32 -0500] [665916] [INFO] Booting worker with pid: 665916
+[2025-06-10 15:03:32 -0500] [665816] [INFO] Worker exiting (pid: 665816)
+[2025-06-10 15:03:32 -0500] [665917] [INFO] Booting worker with pid: 665917
+[2025-06-10 15:03:32 -0500] [665818] [INFO] Worker exiting (pid: 665818)
+[2025-06-10 15:03:32 -0500] [665817] [INFO] Worker exiting (pid: 665817)
+[2025-06-10 15:03:32 -0500] [665918] [INFO] Booting worker with pid: 665918
+[2025-06-10 15:03:32 -0500] [665815] [ERROR] Worker (pid:665816) was sent SIGTERM!
+[2025-06-10 15:03:32 -0500] [665815] [ERROR] Worker (pid:665817) was sent SIGTERM!
+[2025-06-10 15:03:32 -0500] [665815] [ERROR] Worker (pid:665818) was sent SIGTERM!
+[2025-06-10 15:03:36,088] ERROR in app: Exception on / [GET]
 Traceback (most recent call last):
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
-    req = next(parser)
-          ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
-    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
-    super().__init__(cfg, unreader, peer_addr)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
-    unused = self.parse(self.unreader)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
-    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
-    self.get_data(unreader, buf)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
-    data = unreader.read()
-           ^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
-    d = self.chunk()
-        ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
-    return self.sock.recv(self.mxchunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
-    sys.exit(1)
-SystemExit: 1
-[2025-06-08 00:23:15 -0500] [437195] [INFO] Worker exiting (pid: 437195)
-[2025-06-08 00:23:15 -0500] [506323] [INFO] Booting worker with pid: 506323
-[2025-06-08 06:09:00 -0500] [437194] [WARNING] Invalid request from ip=3.131.215.38: Invalid HTTP request line: 'SSH-2.0-Go'
-[2025-06-08 09:02:43 -0500] [506323] [WARNING] Invalid request from ip=206.168.34.212: Invalid HTTP request line: 'version'
-[2025-06-08 09:02:51 -0500] [432761] [CRITICAL] WORKER TIMEOUT (pid:437194)
-[2025-06-08 09:02:51 -0500] [437194] [ERROR] Error handling request (no URI read)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 60, in top-level template code
+    <a class="nav-link" href="{{ url_for('historia') }}">Historial</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'historia'. Did you mean 'historico' instead?
+[2025-06-10 15:03:37,409] ERROR in app: Exception on / [GET]
 Traceback (most recent call last):
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
-    req = next(parser)
-          ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
-    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
-    super().__init__(cfg, unreader, peer_addr)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
-    unused = self.parse(self.unreader)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
-    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
-    self.get_data(unreader, buf)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
-    data = unreader.read()
-           ^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
-    d = self.chunk()
-        ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
-    return self.sock.recv(self.mxchunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
-    sys.exit(1)
-SystemExit: 1
-[2025-06-08 09:02:51 -0500] [437194] [INFO] Worker exiting (pid: 437194)
-[2025-06-08 09:02:51 -0500] [527706] [INFO] Booting worker with pid: 527706
-[2025-06-08 10:00:25 -0500] [527706] [WARNING] Invalid request from ip=167.94.145.107: Invalid HTTP Version: (2, 0)
-[2025-06-08 10:01:11 -0500] [432761] [CRITICAL] WORKER TIMEOUT (pid:437196)
-[2025-06-08 10:01:11 -0500] [437196] [ERROR] Error handling request (no URI read)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 60, in top-level template code
+    <a class="nav-link" href="{{ url_for('historia') }}">Historial</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'historia'. Did you mean 'historico' instead?
+[2025-06-10 15:08:02 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:08:02 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:08:02 -0500] [666394] [INFO] Booting worker with pid: 666394
+[2025-06-10 15:08:02 -0500] [666395] [INFO] Booting worker with pid: 666395
+[2025-06-10 15:08:02 -0500] [665916] [INFO] Worker exiting (pid: 665916)
+[2025-06-10 15:08:02 -0500] [665918] [INFO] Worker exiting (pid: 665918)
+[2025-06-10 15:08:02 -0500] [665917] [INFO] Worker exiting (pid: 665917)
+[2025-06-10 15:08:02 -0500] [666396] [INFO] Booting worker with pid: 666396
+[2025-06-10 15:08:02 -0500] [665815] [ERROR] Worker (pid:665916) was sent SIGTERM!
+[2025-06-10 15:08:02 -0500] [665815] [ERROR] Worker (pid:665918) was sent SIGTERM!
+[2025-06-10 15:08:02 -0500] [665815] [ERROR] Worker (pid:665917) was sent SIGTERM!
+[2025-06-10 15:08:06,979] ERROR in app: Exception on / [GET]
 Traceback (most recent call last):
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
-    req = next(parser)
-          ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
-    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
-    super().__init__(cfg, unreader, peer_addr)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
-    unused = self.parse(self.unreader)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
-    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
-    self.get_data(unreader, buf)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
-    data = unreader.read()
-           ^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
-    d = self.chunk()
-        ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
-    return self.sock.recv(self.mxchunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
-    sys.exit(1)
-SystemExit: 1
-[2025-06-08 10:01:11 -0500] [437196] [INFO] Worker exiting (pid: 437196)
-[2025-06-08 10:01:12 -0500] [530124] [INFO] Booting worker with pid: 530124
-[2025-06-08 14:08:31 -0500] [506323] [WARNING] Invalid request from ip=167.94.145.105: Invalid HTTP Version: (2, 0)
-[2025-06-08 14:09:37 -0500] [432761] [CRITICAL] WORKER TIMEOUT (pid:527706)
-[2025-06-08 14:09:37 -0500] [527706] [ERROR] Error handling request (no URI read)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('dashboard') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'get_data' instead?
+[2025-06-10 15:08:08,172] ERROR in app: Exception on / [GET]
 Traceback (most recent call last):
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
-    req = next(parser)
-          ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
-    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
-    super().__init__(cfg, unreader, peer_addr)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
-    unused = self.parse(self.unreader)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
-    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
-    self.get_data(unreader, buf)
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
-    data = unreader.read()
-           ^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
-    d = self.chunk()
-        ^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
-    return self.sock.recv(self.mxchunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
-    sys.exit(1)
-SystemExit: 1
-[2025-06-08 14:09:37 -0500] [527706] [INFO] Worker exiting (pid: 527706)
-[2025-06-08 14:09:38 -0500] [540001] [INFO] Booting worker with pid: 540001
-[2025-06-08 16:31:04 -0500] [530124] [WARNING] Invalid request from ip=199.45.154.113: Invalid HTTP Version: (2, 0)
-[2025-06-09 07:54:19 -0500] [530124] [WARNING] Invalid request from ip=8.222.185.134: Invalid HTTP request line: ''
-[2025-06-09 08:21:32 -0500] [540001] [WARNING] Invalid request from ip=3.130.96.91: Invalid HTTP request line: 'SSH-2.0-Go'
-[2025-06-09 12:02:03 -0500] [530124] [WARNING] Invalid request from ip=199.45.155.101: Invalid HTTP Version: (2, 0)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('dashboard') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'get_data' instead?
+[2025-06-10 15:09:40 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:09:40 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:09:40 -0500] [666442] [INFO] Booting worker with pid: 666442
+[2025-06-10 15:09:40 -0500] [666443] [INFO] Booting worker with pid: 666443
+[2025-06-10 15:09:40 -0500] [666394] [INFO] Worker exiting (pid: 666394)
+[2025-06-10 15:09:40 -0500] [666395] [INFO] Worker exiting (pid: 666395)
+[2025-06-10 15:09:40 -0500] [666396] [INFO] Worker exiting (pid: 666396)
+[2025-06-10 15:09:40 -0500] [666444] [INFO] Booting worker with pid: 666444
+[2025-06-10 15:09:40 -0500] [665815] [ERROR] Worker (pid:666394) was sent SIGTERM!
+[2025-06-10 15:09:40 -0500] [665815] [ERROR] Worker (pid:666395) was sent SIGTERM!
+[2025-06-10 15:09:40 -0500] [665815] [ERROR] Worker (pid:666396) was sent SIGTERM!
+[2025-06-10 15:09:43,779] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('/') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint '/'. Did you mean 'static' instead?
+[2025-06-10 15:09:44,748] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('/') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint '/'. Did you mean 'static' instead?
+[2025-06-10 15:11:27,140] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('/') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint '/'. Did you mean 'static' instead?
+[2025-06-10 15:11:37,395] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('/') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint '/'. Did you mean 'static' instead?
+[2025-06-10 15:16:30,195] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 38, in index
+    response = make_response(render_template('dashboard.html'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/dashboard.html", line 57, in top-level template code
+    <a class="nav-link active" href="{{ url_for('/') }}">Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint '/'. Did you mean 'static' instead?
+[2025-06-10 15:19:08 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:19:08 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:19:08 -0500] [667102] [INFO] Booting worker with pid: 667102
+[2025-06-10 15:19:08 -0500] [666442] [INFO] Worker exiting (pid: 666442)
+[2025-06-10 15:19:08 -0500] [667103] [INFO] Booting worker with pid: 667103
+[2025-06-10 15:19:08 -0500] [666443] [INFO] Worker exiting (pid: 666443)
+[2025-06-10 15:19:08 -0500] [666444] [INFO] Worker exiting (pid: 666444)
+[2025-06-10 15:19:08 -0500] [667104] [INFO] Booting worker with pid: 667104
+[2025-06-10 15:19:09 -0500] [665815] [ERROR] Worker (pid:666444) was sent SIGTERM!
+[2025-06-10 15:19:09 -0500] [665815] [ERROR] Worker (pid:666443) was sent SIGTERM!
+[2025-06-10 15:19:09 -0500] [665815] [ERROR] Worker (pid:666442) was sent SIGTERM!
+[2025-06-10 15:20:23 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:20:23 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:20:23 -0500] [667138] [INFO] Booting worker with pid: 667138
+[2025-06-10 15:20:23 -0500] [667139] [INFO] Booting worker with pid: 667139
+[2025-06-10 15:20:23 -0500] [667102] [INFO] Worker exiting (pid: 667102)
+[2025-06-10 15:20:23 -0500] [667103] [INFO] Worker exiting (pid: 667103)
+[2025-06-10 15:20:23 -0500] [667104] [INFO] Worker exiting (pid: 667104)
+[2025-06-10 15:20:23 -0500] [667140] [INFO] Booting worker with pid: 667140
+[2025-06-10 15:22:59 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:22:59 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:22:59 -0500] [667209] [INFO] Booting worker with pid: 667209
+[2025-06-10 15:22:59 -0500] [667210] [INFO] Booting worker with pid: 667210
+[2025-06-10 15:22:59 -0500] [667138] [INFO] Worker exiting (pid: 667138)
+[2025-06-10 15:22:59 -0500] [667140] [INFO] Worker exiting (pid: 667140)
+[2025-06-10 15:22:59 -0500] [667139] [INFO] Worker exiting (pid: 667139)
+[2025-06-10 15:22:59 -0500] [667211] [INFO] Booting worker with pid: 667211
+[2025-06-10 15:22:59 -0500] [665815] [ERROR] Worker (pid:667138) was sent SIGTERM!
+[2025-06-10 15:22:59 -0500] [665815] [ERROR] Worker (pid:667139) was sent SIGTERM!
+[2025-06-10 15:22:59 -0500] [665815] [ERROR] Worker (pid:667140) was sent SIGTERM!
+[2025-06-10 15:24:47 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:24:47 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:24:47 -0500] [667258] [INFO] Booting worker with pid: 667258
+[2025-06-10 15:24:47 -0500] [667259] [INFO] Booting worker with pid: 667259
+[2025-06-10 15:24:47 -0500] [667209] [INFO] Worker exiting (pid: 667209)
+[2025-06-10 15:24:47 -0500] [667210] [INFO] Worker exiting (pid: 667210)
+[2025-06-10 15:24:47 -0500] [667211] [INFO] Worker exiting (pid: 667211)
+[2025-06-10 15:24:47 -0500] [667260] [INFO] Booting worker with pid: 667260
+[2025-06-10 15:24:48 -0500] [665815] [ERROR] Worker (pid:667211) was sent SIGTERM!
+[2025-06-10 15:24:48 -0500] [665815] [ERROR] Worker (pid:667210) was sent SIGTERM!
+[2025-06-10 15:27:51 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:27:51 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:27:51 -0500] [667705] [INFO] Booting worker with pid: 667705
+[2025-06-10 15:27:51 -0500] [667706] [INFO] Booting worker with pid: 667706
+[2025-06-10 15:27:51 -0500] [667258] [INFO] Worker exiting (pid: 667258)
+[2025-06-10 15:27:51 -0500] [667259] [INFO] Worker exiting (pid: 667259)
+[2025-06-10 15:27:51 -0500] [667260] [INFO] Worker exiting (pid: 667260)
+[2025-06-10 15:27:51 -0500] [667707] [INFO] Booting worker with pid: 667707
+[2025-06-10 15:27:52 -0500] [665815] [ERROR] Worker (pid:667259) was sent SIGTERM!
+[2025-06-10 15:27:52 -0500] [665815] [ERROR] Worker (pid:667260) was sent SIGTERM!
+[2025-06-10 15:27:52 -0500] [665815] [ERROR] Worker (pid:667258) was sent SIGTERM!
+[2025-06-10 15:32:51 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:32:51 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:32:51 -0500] [667845] [INFO] Booting worker with pid: 667845
+[2025-06-10 15:32:51 -0500] [667846] [INFO] Booting worker with pid: 667846
+[2025-06-10 15:32:51 -0500] [667705] [INFO] Worker exiting (pid: 667705)
+[2025-06-10 15:32:51 -0500] [667706] [INFO] Worker exiting (pid: 667706)
+[2025-06-10 15:32:51 -0500] [667707] [INFO] Worker exiting (pid: 667707)
+[2025-06-10 15:32:51 -0500] [667847] [INFO] Booting worker with pid: 667847
+[2025-06-10 15:34:37 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:34:37 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:34:37 -0500] [667896] [INFO] Booting worker with pid: 667896
+[2025-06-10 15:34:37 -0500] [667897] [INFO] Booting worker with pid: 667897
+[2025-06-10 15:34:37 -0500] [667845] [INFO] Worker exiting (pid: 667845)
+[2025-06-10 15:34:37 -0500] [667846] [INFO] Worker exiting (pid: 667846)
+[2025-06-10 15:34:37 -0500] [667847] [INFO] Worker exiting (pid: 667847)
+[2025-06-10 15:34:37 -0500] [667898] [INFO] Booting worker with pid: 667898
+[2025-06-10 15:34:38 -0500] [665815] [ERROR] Worker (pid:667847) was sent SIGTERM!
+[2025-06-10 15:34:38 -0500] [665815] [ERROR] Worker (pid:667845) was sent SIGTERM!
+[2025-06-10 15:34:38 -0500] [665815] [ERROR] Worker (pid:667846) was sent SIGTERM!
+[2025-06-10 15:35:13 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:35:13 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:35:13 -0500] [667920] [INFO] Booting worker with pid: 667920
+[2025-06-10 15:35:13 -0500] [667921] [INFO] Booting worker with pid: 667921
+[2025-06-10 15:35:13 -0500] [667896] [INFO] Worker exiting (pid: 667896)
+[2025-06-10 15:35:13 -0500] [667922] [INFO] Booting worker with pid: 667922
+[2025-06-10 15:35:13 -0500] [667897] [INFO] Worker exiting (pid: 667897)
+[2025-06-10 15:35:13 -0500] [667898] [INFO] Worker exiting (pid: 667898)
+[2025-06-10 15:40:07 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:40:07 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:40:07 -0500] [668417] [INFO] Booting worker with pid: 668417
+[2025-06-10 15:40:07 -0500] [667920] [INFO] Worker exiting (pid: 667920)
+[2025-06-10 15:40:07 -0500] [667921] [INFO] Worker exiting (pid: 667921)
+[2025-06-10 15:40:07 -0500] [668418] [INFO] Booting worker with pid: 668418
+[2025-06-10 15:40:07 -0500] [667922] [INFO] Worker exiting (pid: 667922)
+[2025-06-10 15:40:07 -0500] [668419] [INFO] Booting worker with pid: 668419
+[2025-06-10 15:40:07 -0500] [665815] [ERROR] Worker (pid:667921) was sent SIGTERM!
+[2025-06-10 15:40:07 -0500] [665815] [ERROR] Worker (pid:667922) was sent SIGTERM!
+[2025-06-10 15:40:07 -0500] [665815] [ERROR] Worker (pid:667920) was sent SIGTERM!
+[2025-06-10 15:44:01 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:44:01 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:44:01 -0500] [668518] [INFO] Booting worker with pid: 668518
+[2025-06-10 15:44:01 -0500] [668418] [INFO] Worker exiting (pid: 668418)
+[2025-06-10 15:44:01 -0500] [668417] [INFO] Worker exiting (pid: 668417)
+[2025-06-10 15:44:01 -0500] [668419] [INFO] Worker exiting (pid: 668419)
+[2025-06-10 15:44:01 -0500] [668519] [INFO] Booting worker with pid: 668519
+[2025-06-10 15:44:01 -0500] [668520] [INFO] Booting worker with pid: 668520
+[2025-06-10 15:46:22 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:46:22 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:46:22 -0500] [668939] [INFO] Booting worker with pid: 668939
+[2025-06-10 15:46:22 -0500] [668940] [INFO] Booting worker with pid: 668940
+[2025-06-10 15:46:22 -0500] [668519] [INFO] Worker exiting (pid: 668519)
+[2025-06-10 15:46:22 -0500] [668518] [INFO] Worker exiting (pid: 668518)
+[2025-06-10 15:46:22 -0500] [668520] [INFO] Worker exiting (pid: 668520)
+[2025-06-10 15:46:22 -0500] [668941] [INFO] Booting worker with pid: 668941
+[2025-06-10 15:46:23 -0500] [665815] [ERROR] Worker (pid:668520) was sent SIGTERM!
+[2025-06-10 15:46:23 -0500] [665815] [ERROR] Worker (pid:668519) was sent SIGTERM!
+[2025-06-10 15:46:23 -0500] [665815] [ERROR] Worker (pid:668518) was sent SIGTERM!
+[2025-06-10 15:49:44 -0500] [665815] [INFO] Handling signal: hup
+[2025-06-10 15:49:44 -0500] [665815] [INFO] Hang up: Master
+[2025-06-10 15:49:44 -0500] [669037] [INFO] Booting worker with pid: 669037
+[2025-06-10 15:49:44 -0500] [669038] [INFO] Booting worker with pid: 669038
+[2025-06-10 15:49:44 -0500] [668940] [INFO] Worker exiting (pid: 668940)
+[2025-06-10 15:49:44 -0500] [668939] [INFO] Worker exiting (pid: 668939)
+[2025-06-10 15:49:44 -0500] [668941] [INFO] Worker exiting (pid: 668941)
+[2025-06-10 15:49:44 -0500] [669039] [INFO] Booting worker with pid: 669039
+[2025-06-10 15:49:44 -0500] [665815] [ERROR] Worker (pid:668939) was sent SIGTERM!
+[2025-06-10 15:49:44 -0500] [665815] [ERROR] Worker (pid:668941) was sent SIGTERM!
+[2025-06-10 15:49:44 -0500] [665815] [ERROR] Worker (pid:668940) was sent SIGTERM!
+[2025-06-10 15:49:49,715] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:51,239] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:51,700] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py:144: SAWarning: This declarative base already contains a class with the same class name and module name as models.SensorData, and will be replaced in the string-lookup table.
+  super().__init__(name, bases, d, **kwargs)
+[2025-06-10 15:49:51,950] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py:144: SAWarning: This declarative base already contains a class with the same class name and module name as models.SensorData, and will be replaced in the string-lookup table.
+  super().__init__(name, bases, d, **kwargs)
+[2025-06-10 15:49:52,090] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:52,280] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:52,450] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:52,631] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:52,801] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:52,950] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py:144: SAWarning: This declarative base already contains a class with the same class name and module name as models.SensorData, and will be replaced in the string-lookup table.
+  super().__init__(name, bases, d, **kwargs)
+[2025-06-10 15:49:53,131] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:53,321] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:53,530] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:53,740] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:53,971] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:54,170] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:49:54,430] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:50:01,098] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:50:01,542] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:50:01,741] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.
+[2025-06-10 15:50:01,912] ERROR in app: Exception on /toggle-riego [POST]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 143, in toggle_riego
+    from models import Estado  # Asegúrate que esté correctamente importado
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/models.py", line 4, in <module>
+    class SensorData(db.Model):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 92, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 144, in __init__
+    super().__init__(name, bases, d, **kwargs)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py", line 198, in __init__
+    _as_declarative(reg, cls, dict_)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 244, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 325, in setup_mapping
+    return _ClassScanMapperConfig(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 576, in __init__
+    self._setup_table(table)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 1755, in _setup_table
+    table_cls(
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py", line 171, in __table_cls__
+    return sa.Table(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in __new__
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 429, in __new__
+    return cls._new(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 461, in _new
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Table 'sensor_data' is already defined for this MetaData instance.  Specify 'extend_existing=True' to redefine options and columns on an existing Table object.

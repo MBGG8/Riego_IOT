@@ -9,7 +9,6 @@
   <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    /* Estilo para las tarjetas de gráficos */
     .chart-card {
       background: white;
       border-radius: 15px;
@@ -18,28 +17,49 @@
       margin-bottom: 2rem;
       margin-left: 3rem;
       margin-right: 3rem;
-      height: 350px; /* tamaño visible y consistente */
+      height: 350px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    /* Ajustar canvas para que ocupe bien dentro de la card */
     .chart-card canvas {
       max-height: 280px;
       width: 100% !important;
     }
+    .navbar-dark {
+      background-color: #1f1f2e;
+    }
   </style>
 </head>
 <body>
- <div class="container mt-4">
-  <br>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">💧 Riego IOT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/historiaIOT">Historial</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
   <h1 class="text-center mb-4">Dashboard de Riego Automático</h1>
-  <br><br> 
+
   <div id="error-message" class="alert alert-warning text-center d-none" role="alert">
     No se recibieron datos del servidor.
   </div>
 
   <div class="row mb-4" id="sensor-cards">
+    <!-- Sensor cards (igual que antes, no modificadas) -->
     <div class="col-md-3 mb-3">
       <div class="card text-white bg-danger sensor-card">
         <div class="card-body text-center">
@@ -48,7 +68,6 @@
         </div>
       </div>
     </div>
-    
     <div class="col-md-3 mb-3">
       <div class="card text-white bg-success sensor-card">
         <div class="card-body text-center">
@@ -57,7 +76,6 @@
         </div>
       </div>
     </div>
-    
     <div class="col-md-3 mb-3">
       <div class="card text-white bg-info sensor-card">
         <div class="card-body text-center">
@@ -66,7 +84,6 @@
         </div>
       </div>
     </div>
-    
     <div class="col-md-3 mb-3">
       <div class="card text-white bg-warning sensor-card">
         <div class="card-body text-center">
@@ -77,23 +94,24 @@
     </div>
   </div>
 
+  <!-- Card de riego con botón -->
   <div class="row mb-4">
     <div class="col-md-6 offset-md-3">
       <div id="riego-card" class="card text-white bg-danger text-center">
         <div class="card-body">
           <h5 class="card-title">Estado de Riego</h5>
           <p class="card-text fs-4" id="riego-value">Inactivo</p>
-          <!-- Botón eliminado -->
+          <button id="toggle-riego-btn" class="btn btn-light mt-3 px-4">
+            Cambiar Estado
+          </button>
         </div>
       </div>
     </div>
   </div>
- </div>
+</div>
 
- <br><br><br><br>
- <h2 class="text-center mb-4">Historial de Datos</h2>
- <br>
- <div class="container mt-4">
+<h2 class="text-center mb-4">Historial de Datos</h2>
+<div class="container mt-4">
   <div class="row justify-content-center g-4">
     <div class="col-md-5 chart-card">
       <canvas id="tempChart"></canvas>
@@ -108,11 +126,11 @@
       <canvas id="luzChart"></canvas>
     </div>
   </div>
- </div>
+</div>
 
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script>
-  // Función para actualizar el estado visual del riego (solo texto y color)
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
   function actualizarEstadoRiego(estado) {
     const card = document.getElementById("riego-card");
     const text = document.getElementById("riego-value");
@@ -128,19 +146,20 @@
     }
   }
 
-  // Obtener estado actual de riego desde backend (solo actualización visual)
   function obtenerEstadoRiego() {
     fetch('/estado')
       .then(res => res.json())
-      .then(data => {
-        actualizarEstadoRiego(data.activar);
-      })
-      .catch(() => {
-        console.warn('No se pudo obtener el estado de riego');
-      });
+      .then(data => actualizarEstadoRiego(data.activar))
+      .catch(() => console.warn('No se pudo obtener el estado de riego'));
   }
 
-  // Obtener datos de sensores y actualizar la UI
+  document.getElementById("toggle-riego-btn").addEventListener("click", () => {
+    fetch("/toggle-riego", { method: "POST" })
+      .then(res => res.json())
+      .then(data => actualizarEstadoRiego(data.activar))
+      .catch(err => console.error("Error al cambiar el estado:", err));
+  });
+
   function obtenerDatosSensores() {
     fetch('/data')
       .then(res => res.json())
@@ -169,8 +188,6 @@
       });
   }
 
-  // *** Eliminar evento click y lógica para cambiar estado del riego ***
-
   let tempChart, humSueloChart, humAmbChart, luzChart;
 
   async function cargarDatos() {
@@ -183,16 +200,20 @@
     const humAmb = datos.map(d => d.humedad_ambiental);
     const luz = datos.map(d => d.luminosidad);
 
+    const crearGrafico = (id, label, data, color) => {
+      return new Chart(document.getElementById(id), {
+        type: 'line',
+        data: { labels, datasets: [{ label, data, borderColor: color, fill: false }] },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    };
+
     if (tempChart) {
       tempChart.data.labels = labels;
       tempChart.data.datasets[0].data = temp;
       tempChart.update();
     } else {
-      tempChart = new Chart(document.getElementById('tempChart'), {
-        type: 'line',
-        data: { labels, datasets: [{ label: 'Temperatura (°C)', data: temp, borderColor: 'red', fill: false }] },
-        options: { responsive: true, maintainAspectRatio: false }
-      });
+      tempChart = crearGrafico('tempChart', 'Temperatura (°C)', temp, 'red');
     }
 
     if (humSueloChart) {
@@ -200,11 +221,7 @@
       humSueloChart.data.datasets[0].data = humSuelo;
       humSueloChart.update();
     } else {
-      humSueloChart = new Chart(document.getElementById('humSueloChart'), {
-        type: 'line',
-        data: { labels, datasets: [{ label: 'Humedad Suelo (%)', data: humSuelo, borderColor: 'green', fill: false }] },
-        options: { responsive: true, maintainAspectRatio: false }
-      });
+      humSueloChart = crearGrafico('humSueloChart', 'Humedad Suelo (%)', humSuelo, 'green');
     }
 
     if (humAmbChart) {
@@ -212,11 +229,7 @@
       humAmbChart.data.datasets[0].data = humAmb;
       humAmbChart.update();
     } else {
-      humAmbChart = new Chart(document.getElementById('humAmbChart'), {
-        type: 'line',
-        data: { labels, datasets: [{ label: 'Humedad Ambiental (%)', data: humAmb, borderColor: 'blue', fill: false }] },
-        options: { responsive: true, maintainAspectRatio: false }
-      });
+      humAmbChart = crearGrafico('humAmbChart', 'Humedad Ambiental (%)', humAmb, 'blue');
     }
 
     if (luzChart) {
@@ -224,15 +237,10 @@
       luzChart.data.datasets[0].data = luz;
       luzChart.update();
     } else {
-      luzChart = new Chart(document.getElementById('luzChart'), {
-        type: 'line',
-        data: { labels, datasets: [{ label: 'Luminosidad', data: luz, borderColor: 'orange', fill: false }] },
-        options: { responsive: true, maintainAspectRatio: false }
-      });
+      luzChart = crearGrafico('luzChart', 'Luminosidad', luz, 'orange');
     }
   }
 
-  // Carga inicial y actualización periódica cada 10 segundos
   obtenerEstadoRiego();
   obtenerDatosSensores();
   cargarDatos();
@@ -242,6 +250,6 @@
     obtenerDatosSensores();
     cargarDatos();
   }, 10000);
- </script>
+</script>
 </body>
 </html>

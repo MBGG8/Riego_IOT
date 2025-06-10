@@ -137,5 +137,17 @@ def estado_riego():
         return nocache_json_response({"activar": ultimo_estado.activar})
     return nocache_json_response({"activar": False})
 
+
+@app.route('/toggle-riego', methods=['POST'])
+def toggle_riego():
+    from models import Estado  # Asegúrate que esté correctamente importado
+
+    estado = Estado.query.order_by(Estado.id.desc()).first()
+    if estado:
+        estado.activar = not estado.activar
+        db.session.commit()
+        return jsonify({'activar': estado.activar})
+    return jsonify({'activar': False}), 404
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
