@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESP32 Dashboard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Estilo para las tarjetas de gráficos */
+    .chart-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      height: 350px; /* tamaño visible y consistente */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* Ajustar canvas para que ocupe bien dentro de la card */
+    .chart-card canvas {
+      max-height: 280px;
+      width: 100% !important;
+    }
+  </style>
+</head>
+<body>
+ <div class="container mt-4">
+  <br>
+  <h1 class="text-center mb-4">Dashboard de Riego Automático</h1>
+  <br><br> 
+  <div id="error-message" class="alert alert-warning text-center d-none" role="alert">
+    No se recibieron datos del servidor.
+  </div>
+
+  <div class="row mb-4" id="sensor-cards">
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-danger sensor-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Temperatura (°C)</h5>
+          <p class="card-text fs-4" id="temp-value">--</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-success sensor-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Humedad del Suelo (%)</h5>
+          <p class="card-text fs-4" id="hum-suelo-value">--</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-info sensor-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Humedad Ambiental (%)</h5>
+          <p class="card-text fs-4" id="hum-ambiental-value">--</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+      <div class="card text-white bg-warning sensor-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Luminosidad</h5>
+          <p class="card-text fs-4" id="luz-value">--</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+      <div id="riego-card" class="card text-white bg-danger text-center">
+        <div class="card-body">
+          <h5 class="card-title">Estado de Riego</h5>
+          <p class="card-text fs-4" id="riego-value">Inactivo</p>
+          <!-- Botón eliminado -->
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <br><br><br><br>
+ <h2 class="text-center mb-4">Historial de Datos</h2>
+ <br>
+ <div class="container mt-4">
+  <div class="row justify-content-center g-4">
+    <div class="col-md-5 chart-card">
+      <canvas id="tempChart"></canvas>
+    </div>
+    <div class="col-md-5 chart-card">
+      <canvas id="humSueloChart"></canvas>
+    </div>
+    <div class="col-md-5 chart-card">
+      <canvas id="humAmbChart"></canvas>
+    </div>
+    <div class="col-md-5 chart-card">
+      <canvas id="luzChart"></canvas>
+    </div>
+  </div>
+ </div>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+  // Función para actualizar el estado visual del riego (solo texto y color)
+  function actualizarEstadoRiego(estado) {
+    const card = document.getElementById("riego-card");
+    const text = document.getElementById("riego-value");
+
+    if (estado === true || estado === "true") {
+      text.innerText = "Activo";
+      card.classList.remove("bg-danger");
+      card.classList.add("bg-success");
+    } else {
+      text.innerText = "Inactivo";
+      card.classList.remove("bg-success");
+      card.classList.add("bg-danger");
+    }
+  }
+
+  // Obtener estado actual de riego desde backend (solo actualización visual)
+  function obtenerEstadoRiego() {
+    fetch('/estado')
+      .then(res => res.json())
+      .then(data => {
+        actualizarEstadoRiego(data.activar);
+      })
+      .catch(() => {
+        console.warn('No se pudo obtener el estado de riego');
+      });
+  }
+
+  // Obtener datos de sensores y actualizar la UI
+  function obtenerDatosSensores() {
+    fetch('/data')
+      .then(res => res.json())
+      .then(data => {
+        if (!data || Object.keys(data).length === 0) {
+          $('#error-message').removeClass('d-none');
+          return;
+        } else {
+          $('#error-message').addClass('d-none');
+        }
+        if (data.temperatura !== undefined) {
+          document.getElementById('temp-value').innerText = data.temperatura;
+        }
+        if (data.humedad_suelo !== undefined) {
+          document.getElementById('hum-suelo-value').innerText = data.humedad_suelo;
+        }
+        if (data.humedad_ambiental !== undefined) {
+          document.getElementById('hum-ambiental-value').innerText = data.humedad_ambiental;
+        }
+        if (data.luminosidad !== undefined) {
+          document.getElementById('luz-value').innerText = data.luminosidad;
+        }
+      })
+      .catch(() => {
+        $('#error-message').removeClass('d-none');
+      });
+  }
+
+  // *** Eliminar evento click y lógica para cambiar estado del riego ***
+
+  let tempChart, humSueloChart, humAmbChart, luzChart;
+
+  async function cargarDatos() {
+    const res = await fetch('/historico?timestamp=' + new Date().getTime());
+    const datos = await res.json();
+
+    const labels = datos.map(d => d.timestamp);
+    const temp = datos.map(d => d.temperatura);
+    const humSuelo = datos.map(d => d.humedad_suelo);
+    const humAmb = datos.map(d => d.humedad_ambiental);
+    const luz = datos.map(d => d.luminosidad);
+
+    if (tempChart) {
+      tempChart.data.labels = labels;
+      tempChart.data.datasets[0].data = temp;
+      tempChart.update();
+    } else {
+      tempChart = new Chart(document.getElementById('tempChart'), {
+        type: 'line',
+        data: { labels, datasets: [{ label: 'Temperatura (°C)', data: temp, borderColor: 'red', fill: false }] },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    if (humSueloChart) {
+      humSueloChart.data.labels = labels;
+      humSueloChart.data.datasets[0].data = humSuelo;
+      humSueloChart.update();
+    } else {
+      humSueloChart = new Chart(document.getElementById('humSueloChart'), {
+        type: 'line',
+        data: { labels, datasets: [{ label: 'Humedad Suelo (%)', data: humSuelo, borderColor: 'green', fill: false }] },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    if (humAmbChart) {
+      humAmbChart.data.labels = labels;
+      humAmbChart.data.datasets[0].data = humAmb;
+      humAmbChart.update();
+    } else {
+      humAmbChart = new Chart(document.getElementById('humAmbChart'), {
+        type: 'line',
+        data: { labels, datasets: [{ label: 'Humedad Ambiental (%)', data: humAmb, borderColor: 'blue', fill: false }] },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    if (luzChart) {
+      luzChart.data.labels = labels;
+      luzChart.data.datasets[0].data = luz;
+      luzChart.update();
+    } else {
+      luzChart = new Chart(document.getElementById('luzChart'), {
+        type: 'line',
+        data: { labels, datasets: [{ label: 'Luminosidad', data: luz, borderColor: 'orange', fill: false }] },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+  }
+
+  // Carga inicial y actualización periódica cada 10 segundos
+  obtenerEstadoRiego();
+  obtenerDatosSensores();
+  cargarDatos();
+
+  setInterval(() => {
+    obtenerEstadoRiego();
+    obtenerDatosSensores();
+    cargarDatos();
+  }, 10000);
+ </script>
+</body>
+</html>

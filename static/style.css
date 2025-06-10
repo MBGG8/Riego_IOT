@@ -1,0 +1,68 @@
+/* Fondo degradado con textura */
+body {
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Cartas con colores más suaves y sombras */
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Redefinimos los colores de las tarjetas para mayor armonía */
+.bg-danger {
+  background-color: #f28b82 !important;
+}
+
+.bg-success {
+  background-color: #81c995 !important;
+}
+
+.bg-info {
+  background-color: #90caf9 !important;
+}
+
+.bg-warning {
+  background-color: #ffd54f !important;
+}
+
+#riego-card.bg-danger {
+  background-color: #ef9a9a !important;
+}
+
+#riego-card.bg-success {
+  background-color: #a5d6a7 !important;
+}
+
+/* Botón de riego interactivo */
+#riego-btn {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#riego-btn:hover {
+  background-color: #43a047;
+  transform: scale(1.05);
+}
+
+/* Estilo de títulos */
+h1, h3 {
+  color: #2e7d32;
+}
+
+/* Gráficos responsivos */
+.chart-container canvas {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+

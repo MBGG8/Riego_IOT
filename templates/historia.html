@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historial IoT</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { text-align: center; margin-bottom: 20px; }
+    .table-container {
+      overflow-y: auto;
+      max-height: 80vh;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f8f8f8;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    @media (max-width: 768px) {
+      table, th, td { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <h2>Historial de Datos IoT (Hora Lima)</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Temperatura (°C)</th>
+          <th>Humedad del Suelo (%)</th>
+          <th>Humedad Ambiental (%)</th>
+          <th>Luminosidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in registros %}
+        <tr>
+          <td>{{ r.fecha.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>{{ r.temperatura }}</td>
+          <td>{{ r.humedad_suelo }}</td>
+          <td>{{ r.humedad_ambiental }}</td>
+          <td>{{ r.luminosidad }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
