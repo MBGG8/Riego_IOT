@@ -49,3 +49,66 @@ nohup: ignoring input
 [2025-06-10 19:27:14 -0500] [679494] [ERROR] Worker (pid:679881) was sent SIGTERM!
 [2025-06-10 19:27:14 -0500] [679494] [ERROR] Worker (pid:679879) was sent SIGTERM!
 [2025-06-10 19:27:14 -0500] [679494] [ERROR] Worker (pid:679880) was sent SIGTERM!
+[2025-06-10 19:34:49 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-10 19:34:49 -0500] [679494] [INFO] Hang up: Master
+[2025-06-10 19:34:49 -0500] [679957] [INFO] Booting worker with pid: 679957
+[2025-06-10 19:34:49 -0500] [679958] [INFO] Booting worker with pid: 679958
+[2025-06-10 19:34:49 -0500] [679887] [INFO] Worker exiting (pid: 679887)
+[2025-06-10 19:34:49 -0500] [679886] [INFO] Worker exiting (pid: 679886)
+[2025-06-10 19:34:49 -0500] [679888] [INFO] Worker exiting (pid: 679888)
+[2025-06-10 19:34:49 -0500] [679959] [INFO] Booting worker with pid: 679959
+[2025-06-10 19:34:50 -0500] [679494] [ERROR] Worker (pid:679888) was sent SIGTERM!
+--- Logging error ---
+[2025-06-10 19:34:50 -0500] [679494] [ERROR] Worker (pid:679886) was sent SIGTERM!
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1684, in _log
+    self.handle(record)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1168, in emit
+    self.handleError(record)
+  File "/usr/lib/python3.12/logging/__init__.py", line 1081, in handleError
+    sys.stderr.write('--- Logging error ---\n')
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+Call stack:
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 208, in run
+    self.sleep()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 359, in sleep
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+Message: 'Worker (pid:679888) was sent SIGTERM!'
+Arguments: ()

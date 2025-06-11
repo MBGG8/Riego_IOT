@@ -152,26 +152,31 @@
     }
 
     async function fetchOverride() {
+      const endpoint = '/estado';
+      console.log(`Consultando endpoint: ${endpoint}`);
       try {
-        const res = await fetch('/estado');
+        const res = await fetch(endpoint);
         const { activar } = await res.json();
         overrideState = activar;
         updateRiegoCard();
       } catch {
-        console.warn('Error obteniendo estado de riego');
+        console.warn(`Error obteniendo estado desde ${endpoint}`);
       }
     }
 
     toggleBtn.addEventListener('click', async () => {
+      const endpoint = '/riego';
+      const payload = { activar: !overrideState };
+      console.log(`Llamando endpoint: ${endpoint} con payload:`, payload);
       try {
-        await fetch('/riego', {
+        await fetch(endpoint, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ activar: !overrideState })
+          body: JSON.stringify(payload)
         });
         await fetchOverride();
       } catch {
-        console.error('Error al cambiar override');
+        console.error(`Error llamando a ${endpoint}`);
       }
     });
 
