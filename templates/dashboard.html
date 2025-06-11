@@ -5,251 +5,241 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ESP32 Dashboard</title>
 
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Tu CSS personalizado -->
   <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <style>
-    .chart-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      margin-left: 3rem;
-      margin-right: 3rem;
-      height: 350px;
+    .sensor-card {
+      height: 120px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
     }
-    .chart-card canvas {
-      max-height: 280px;
-      width: 100% !important;
+    .chart-card {
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      height: 300px;
+      margin-bottom: 2rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
     }
-    .navbar-dark {
-      background-color: #1f1f2e;
+    #toggle-btn {
+      width: 200px;
     }
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">💧 Riego IOT</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/historiaIOT">Historial</a>
-        </li>
-      </ul>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">💧 Riego IOT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/historiaIOT">Historial</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container mt-4">
-  <h1 class="text-center mb-4">Dashboard de Riego Automático</h1>
+  <!-- Contenido -->
+  <div class="container py-4">
 
-  <div id="error-message" class="alert alert-warning text-center d-none" role="alert">
-    No se recibieron datos del servidor.
-  </div>
+    <!-- Título -->
+    <h1 class="text-center mb-5">Dashboard de Riego Automático</h1>
 
-  <div class="row mb-4" id="sensor-cards">
-    <!-- Sensor cards (igual que antes, no modificadas) -->
-    <div class="col-md-3 mb-3">
-      <div class="card text-white bg-danger sensor-card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Temperatura (°C)</h5>
-          <p class="card-text fs-4" id="temp-value">--</p>
+    <!-- Tarjetas de sensores -->
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="sensor-card text-white bg-danger">
+          <h5>Temperatura (°C)</h5>
+          <p id="temp-value">--</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sensor-card text-white bg-success">
+          <h5>Humedad Suelo (%)</h5>
+          <p id="hum-suelo-value">--</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sensor-card text-white bg-info">
+          <h5>Humedad Ambiental (%)</h5>
+          <p id="hum-ambiental-value">--</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sensor-card text-white bg-warning">
+          <h5>Luminosidad (lx)</h5>
+          <p id="luz-value">--</p>
         </div>
       </div>
     </div>
-    <div class="col-md-3 mb-3">
-      <div class="card text-white bg-success sensor-card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Humedad del Suelo (%)</h5>
-          <p class="card-text fs-4" id="hum-suelo-value">--</p>
+
+    <!-- Tarjeta de estado de riego -->
+    <div class="row justify-content-center my-4 mb- mb-5">
+      <div class="col-md-6 text-center">
+        <div id="riego-card" class="card text-white">
+          <div class="card-body">
+            <h5 class="card-title">Estado de Riego</h5>
+            <p id="riego-value" class="display-6">--</p>
+            <button id="toggle-btn" class="btn btn-lg">Cargando...</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-3 mb-3">
-      <div class="card text-white bg-info sensor-card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Humedad Ambiental (%)</h5>
-          <p class="card-text fs-4" id="hum-ambiental-value">--</p>
-        </div>
+
+    <!-- Gráficas de histórico -->
+    <h2 class="text-center mb-4 mt-5">Historial de Datos</h2>
+    <div class="container mt-4">
+	<div class="row justify-content-center g-4">
+      <div class="col-md-5 chart-card">
+        <canvas id="tempChart"></canvas>
       </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <div class="card text-white bg-warning sensor-card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Luminosidad</h5>
-          <p class="card-text fs-4" id="luz-value">--</p>
-        </div>
+      <div class="col-md-5 chart-card">
+        <canvas id="humSueloChart"></canvas>
       </div>
+      <div class="col-md-5 chart-card">
+        <canvas id="humAmbChart"></canvas>
+      </div>
+      <div class="col-md-5 chart-card">
+        <canvas id="luzChart"></canvas>
+      </div>
+	</div>
     </div>
   </div>
 
-  <!-- Card de riego con botón -->
-  <div class="row mb-4">
-    <div class="col-md-6 offset-md-3">
-      <div id="riego-card" class="card text-white bg-danger text-center">
-        <div class="card-body">
-          <h5 class="card-title">Estado de Riego</h5>
-          <p class="card-text fs-4" id="riego-value">Inactivo</p>
-          <button id="toggle-riego-btn" class="btn btn-light mt-3 px-4">
-            Cambiar Estado
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<h2 class="text-center mb-4">Historial de Datos</h2>
-<div class="container mt-4">
-  <div class="row justify-content-center g-4">
-    <div class="col-md-5 chart-card">
-      <canvas id="tempChart"></canvas>
-    </div>
-    <div class="col-md-5 chart-card">
-      <canvas id="humSueloChart"></canvas>
-    </div>
-    <div class="col-md-5 chart-card">
-      <canvas id="humAmbChart"></canvas>
-    </div>
-    <div class="col-md-5 chart-card">
-      <canvas id="luzChart"></canvas>
-    </div>
-  </div>
-</div>
+  <script>
+    let overrideState = false;
+    const toggleBtn = document.getElementById('toggle-btn');
+    const riegoCard = document.getElementById('riego-card');
+    const riegoText = document.getElementById('riego-value');
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  function actualizarEstadoRiego(estado) {
-    const card = document.getElementById("riego-card");
-    const text = document.getElementById("riego-value");
-
-    if (estado === true || estado === "true") {
-      text.innerText = "Activo";
-      card.classList.remove("bg-danger");
-      card.classList.add("bg-success");
-    } else {
-      text.innerText = "Inactivo";
-      card.classList.remove("bg-success");
-      card.classList.add("bg-danger");
+    function updateRiegoCard() {
+      if (overrideState) {
+        toggleBtn.innerText = 'Desactivar Riego';
+        toggleBtn.className = 'btn btn-danger';
+        riegoCard.className = 'card text-white bg-success';
+        riegoText.innerText = 'Activo';
+      } else {
+        toggleBtn.innerText = 'Activar Riego';
+        toggleBtn.className = 'btn btn-success';
+        riegoCard.className = 'card text-white bg-danger';
+        riegoText.innerText = 'Inactivo';
+      }
     }
-  }
 
-  function obtenerEstadoRiego() {
-    fetch('/estado')
-      .then(res => res.json())
-      .then(data => actualizarEstadoRiego(data.activar))
-      .catch(() => console.warn('No se pudo obtener el estado de riego'));
-  }
+    async function fetchOverride() {
+      try {
+        const res = await fetch('/estado');
+        const { activar } = await res.json();
+        overrideState = activar;
+        updateRiegoCard();
+      } catch {
+        console.warn('Error obteniendo estado de riego');
+      }
+    }
 
-  document.getElementById("toggle-riego-btn").addEventListener("click", () => {
-    fetch("/toggle-riego", { method: "POST" })
-      .then(res => res.json())
-      .then(data => actualizarEstadoRiego(data.activar))
-      .catch(err => console.error("Error al cambiar el estado:", err));
-  });
+    toggleBtn.addEventListener('click', async () => {
+      try {
+        await fetch('/riego', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ activar: !overrideState })
+        });
+        await fetchOverride();
+      } catch {
+        console.error('Error al cambiar override');
+      }
+    });
 
-  function obtenerDatosSensores() {
-    fetch('/data')
-      .then(res => res.json())
-      .then(data => {
-        if (!data || Object.keys(data).length === 0) {
-          $('#error-message').removeClass('d-none');
-          return;
+    async function fetchSensorData() {
+      try {
+        const res = await fetch('/data');
+        const d = await res.json();
+        if (d.temperatura !== undefined) {
+          document.getElementById('temp-value').innerText       = d.temperatura;
+          document.getElementById('hum-suelo-value').innerText = d.humedad_suelo;
+          document.getElementById('hum-ambiental-value').innerText = d.humedad_ambiental;
+          document.getElementById('luz-value').innerText        = d.luminosidad;
+        }
+      } catch {
+        console.warn('No se recibieron datos de sensores');
+      }
+    }
+
+    let charts = {};
+    async function fetchHistorico() {
+      try {
+        const res = await fetch('/historico');
+        const data = await res.json();
+        const labels = data.map(x => x.timestamp);
+
+        function makeConfig(label, arr, color) {
+          return {
+            type: 'line',
+            data: { labels, datasets: [{ label, data: arr, borderColor: color, fill: false }] },
+            options: { responsive: true, maintainAspectRatio: false }
+          };
+        }
+
+        if (!charts.temp) {
+          charts.temp  = new Chart(document.getElementById('tempChart'), makeConfig('Temperatura (°C)', data.map(x => x.temperatura), 'red'));
+          charts.suelo = new Chart(document.getElementById('humSueloChart'), makeConfig('Humedad Suelo (%)', data.map(x => x.humedad_suelo), 'green'));
+          charts.amb   = new Chart(document.getElementById('humAmbChart'), makeConfig('Humedad Ambiental (%)', data.map(x => x.humedad_ambiental), 'blue'));
+          charts.luz   = new Chart(document.getElementById('luzChart'), makeConfig('Luminosidad (lx)', data.map(x => x.luminosidad), 'orange'));
         } else {
-          $('#error-message').addClass('d-none');
+          charts.temp.data.labels = labels;
+          charts.temp.data.datasets[0].data = data.map(x => x.temperatura);
+          charts.temp.update();
+          charts.suelo.data.labels = labels;
+          charts.suelo.data.datasets[0].data = data.map(x => x.humedad_suelo);
+          charts.suelo.update();
+          charts.amb.data.labels = labels;
+          charts.amb.data.datasets[0].data = data.map(x => x.humedad_ambiental);
+          charts.amb.update();
+          charts.luz.data.labels = labels;
+          charts.luz.data.datasets[0].data = data.map(x => x.luminosidad);
+          charts.luz.update();
         }
-        if (data.temperatura !== undefined) {
-          document.getElementById('temp-value').innerText = data.temperatura;
-        }
-        if (data.humedad_suelo !== undefined) {
-          document.getElementById('hum-suelo-value').innerText = data.humedad_suelo;
-        }
-        if (data.humedad_ambiental !== undefined) {
-          document.getElementById('hum-ambiental-value').innerText = data.humedad_ambiental;
-        }
-        if (data.luminosidad !== undefined) {
-          document.getElementById('luz-value').innerText = data.luminosidad;
-        }
-      })
-      .catch(() => {
-        $('#error-message').removeClass('d-none');
-      });
-  }
-
-  let tempChart, humSueloChart, humAmbChart, luzChart;
-
-  async function cargarDatos() {
-    const res = await fetch('/historico?timestamp=' + new Date().getTime());
-    const datos = await res.json();
-
-    const labels = datos.map(d => d.timestamp);
-    const temp = datos.map(d => d.temperatura);
-    const humSuelo = datos.map(d => d.humedad_suelo);
-    const humAmb = datos.map(d => d.humedad_ambiental);
-    const luz = datos.map(d => d.luminosidad);
-
-    const crearGrafico = (id, label, data, color) => {
-      return new Chart(document.getElementById(id), {
-        type: 'line',
-        data: { labels, datasets: [{ label, data, borderColor: color, fill: false }] },
-        options: { responsive: true, maintainAspectRatio: false }
-      });
-    };
-
-    if (tempChart) {
-      tempChart.data.labels = labels;
-      tempChart.data.datasets[0].data = temp;
-      tempChart.update();
-    } else {
-      tempChart = crearGrafico('tempChart', 'Temperatura (°C)', temp, 'red');
+      } catch {
+        console.warn('Error obteniendo histórico');
+      }
     }
 
-    if (humSueloChart) {
-      humSueloChart.data.labels = labels;
-      humSueloChart.data.datasets[0].data = humSuelo;
-      humSueloChart.update();
-    } else {
-      humSueloChart = crearGrafico('humSueloChart', 'Humedad Suelo (%)', humSuelo, 'green');
-    }
-
-    if (humAmbChart) {
-      humAmbChart.data.labels = labels;
-      humAmbChart.data.datasets[0].data = humAmb;
-      humAmbChart.update();
-    } else {
-      humAmbChart = crearGrafico('humAmbChart', 'Humedad Ambiental (%)', humAmb, 'blue');
-    }
-
-    if (luzChart) {
-      luzChart.data.labels = labels;
-      luzChart.data.datasets[0].data = luz;
-      luzChart.update();
-    } else {
-      luzChart = crearGrafico('luzChart', 'Luminosidad', luz, 'orange');
-    }
-  }
-
-  obtenerEstadoRiego();
-  obtenerDatosSensores();
-  cargarDatos();
-
-  setInterval(() => {
-    obtenerEstadoRiego();
-    obtenerDatosSensores();
-    cargarDatos();
-  }, 10000);
-</script>
+    // Inicialización y refresco periódico
+    (async () => {
+      await fetchOverride();
+      await fetchSensorData();
+      await fetchHistorico();
+      setInterval(async () => {
+        await fetchOverride();
+        await fetchSensorData();
+        await fetchHistorico();
+      }, 10000);
+    })();
+  </script>
 </body>
 </html>
