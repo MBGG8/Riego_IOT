@@ -112,3 +112,784 @@ Call stack:
     self.error_log.error(msg, *args, **kwargs)
 Message: 'Worker (pid:679888) was sent SIGTERM!'
 Arguments: ()
+[2025-06-10 20:25:17 -0500] [679959] [WARNING] Invalid request from ip=193.188.192.219: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-10 21:13:15 -0500] [679958] [WARNING] Invalid request from ip=206.168.34.118: Invalid HTTP Version: (2, 0)
+[2025-06-10 21:14:18 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:679959)
+[2025-06-10 21:14:18 -0500] [679959] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-10 21:14:18 -0500] [679959] [INFO] Worker exiting (pid: 679959)
+[2025-06-10 21:14:18 -0500] [684362] [INFO] Booting worker with pid: 684362
+[2025-06-11 09:27:01 -0500] [679957] [WARNING] Invalid request from ip=147.45.112.101: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-11 11:38:15 -0500] [684362] [WARNING] Invalid request from ip=147.45.112.101: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-11 22:45:00 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:679958)
+[2025-06-11 22:45:00 -0500] [679958] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-11 22:45:00 -0500] [679958] [INFO] Worker exiting (pid: 679958)
+[2025-06-11 22:45:00 -0500] [749275] [INFO] Booting worker with pid: 749275
+[2025-06-12 03:01:18 -0500] [749275] [WARNING] Invalid request from ip=206.168.34.209: Invalid HTTP Version: (2, 0)
+[2025-06-12 03:02:24 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:749275)
+[2025-06-12 03:02:24 -0500] [749275] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-12 03:02:24 -0500] [749275] [INFO] Worker exiting (pid: 749275)
+[2025-06-12 03:02:24 -0500] [759796] [INFO] Booting worker with pid: 759796
+[2025-06-12 08:26:16 -0500] [679957] [WARNING] Invalid request from ip=165.154.182.182: Invalid HTTP request line: ''
+[2025-06-12 09:39:22 -0500] [679957] [WARNING] Invalid request from ip=3.132.23.201: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-06-12 13:52:26 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:684362)
+[2025-06-12 13:52:26 -0500] [684362] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-12 13:52:26 -0500] [684362] [INFO] Worker exiting (pid: 684362)
+[2025-06-12 13:52:27 -0500] [787626] [INFO] Booting worker with pid: 787626
+[2025-06-12 14:17:19 -0500] [679957] [WARNING] Invalid request from ip=194.180.49.39: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-13 02:21:18 -0500] [787626] [WARNING] Invalid request from ip=206.168.34.200: Invalid HTTP Version: (2, 0)
+[2025-06-13 02:22:13 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:759796)
+[2025-06-13 02:22:13 -0500] [759796] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-13 02:22:13 -0500] [759796] [INFO] Worker exiting (pid: 759796)
+[2025-06-13 02:22:14 -0500] [818756] [INFO] Booting worker with pid: 818756
+[2025-06-13 11:03:03 -0500] [787626] [WARNING] Invalid request from ip=167.94.145.108: Invalid HTTP Version: (2, 0)
+[2025-06-14 02:46:13 -0500] [679957] [WARNING] Invalid request from ip=167.94.138.174: Invalid HTTP Version: (2, 0)
+[2025-06-14 02:47:23 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:818756)
+[2025-06-14 02:47:23 -0500] [818756] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-14 02:47:23 -0500] [818756] [INFO] Worker exiting (pid: 818756)
+[2025-06-14 02:47:24 -0500] [879979] [INFO] Booting worker with pid: 879979
+[2025-06-14 10:28:48 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:787626)
+[2025-06-14 10:28:48 -0500] [787626] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-14 10:28:48 -0500] [787626] [INFO] Worker exiting (pid: 787626)
+[2025-06-14 10:28:48 -0500] [899952] [INFO] Booting worker with pid: 899952
+[2025-06-14 10:29:21 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:899952)
+[2025-06-14 10:29:21 -0500] [899952] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-14 10:29:21 -0500] [899952] [INFO] Worker exiting (pid: 899952)
+[2025-06-14 10:29:21 -0500] [899953] [INFO] Booting worker with pid: 899953
+[2025-06-14 16:08:52 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:879979)
+[2025-06-14 16:08:52 -0500] [879979] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-14 16:08:52 -0500] [879979] [INFO] Worker exiting (pid: 879979)
+[2025-06-14 16:08:52 -0500] [913970] [INFO] Booting worker with pid: 913970
+[2025-06-14 21:32:43 -0500] [679957] [WARNING] Invalid request from ip=162.142.125.219: Invalid HTTP Version: (2, 0)
+[2025-06-14 21:33:25 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:679957)
+[2025-06-14 21:33:25 -0500] [679957] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-14 21:33:25 -0500] [679957] [INFO] Worker exiting (pid: 679957)
+[2025-06-14 21:33:25 -0500] [926881] [INFO] Booting worker with pid: 926881
+[2025-06-15 13:10:02 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:899953)
+[2025-06-15 13:10:02 -0500] [899953] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-15 13:10:02 -0500] [899953] [INFO] Worker exiting (pid: 899953)
+[2025-06-15 13:10:02 -0500] [965631] [INFO] Booting worker with pid: 965631
+[2025-06-15 14:35:03 -0500] [926881] [WARNING] Invalid request from ip=18.220.154.78: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-06-15 18:20:29 -0500] [913970] [WARNING] Invalid request from ip=167.94.145.106: Invalid HTTP Version: (2, 0)
+[2025-06-16 12:29:18 -0500] [926881] [WARNING] Invalid request from ip=3.137.73.221: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-06-16 15:48:16 -0500] [926881] [WARNING] Invalid request from ip=206.168.34.201: Invalid HTTP Version: (2, 0)
+[2025-06-16 15:49:15 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:965631)
+[2025-06-16 15:49:15 -0500] [965631] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-16 15:49:15 -0500] [965631] [INFO] Worker exiting (pid: 965631)
+[2025-06-16 15:49:15 -0500] [1030692] [INFO] Booting worker with pid: 1030692
+[2025-06-17 01:11:57 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:926881)
+[2025-06-17 01:11:57 -0500] [926881] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-17 01:11:57 -0500] [926881] [INFO] Worker exiting (pid: 926881)
+[2025-06-17 01:11:58 -0500] [1053020] [INFO] Booting worker with pid: 1053020
+[2025-06-17 02:38:08 -0500] [913970] [WARNING] Invalid request from ip=199.45.155.76: Invalid HTTP Version: (2, 0)
+[2025-06-17 04:09:00 -0500] [1053020] [WARNING] Invalid request from ip=167.94.145.108: Invalid HTTP Version: (2, 0)
+[2025-06-17 15:10:42 -0500] [913970] [WARNING] Invalid request from ip=176.125.228.15: Invalid HTTP request line: 'SSH-2.0-WanScannerBot'
+[2025-06-17 15:10:43 -0500] [913970] [WARNING] Invalid request from ip=176.125.228.15: Invalid HTTP request line: '\x03\x00\x00&!à\x00\x00þÊ\x00Cookie: mstshash='
+[2025-06-17 15:10:57 -0500] [913970] [WARNING] Invalid request from ip=176.125.228.15: Invalid HTTP Version: 'RTSP/1.0'
+[2025-06-17 15:11:02 -0500] [1053020] [WARNING] Invalid request from ip=176.125.228.15: Invalid HTTP request line: '\x01\x00\x00\x00'
+[2025-06-17 19:23:56 -0500] [1030692] [WARNING] Invalid request from ip=165.154.41.152: Invalid HTTP request line: ''
+[2025-06-17 22:57:42 -0500] [1053020] [WARNING] Invalid request from ip=3.137.73.221: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-06-18 10:28:06 -0500] [913970] [WARNING] Invalid request from ip=162.142.125.117: Invalid HTTP Version: (2, 0)
+[2025-06-18 10:29:02 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:913970)
+[2025-06-18 10:29:02 -0500] [913970] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-18 10:29:02 -0500] [913970] [INFO] Worker exiting (pid: 913970)
+[2025-06-18 10:29:03 -0500] [1136760] [INFO] Booting worker with pid: 1136760
+[2025-06-18 10:31:41 -0500] [1136760] [WARNING] Invalid request from ip=206.168.34.195: Invalid HTTP Version: (2, 0)
+[2025-06-18 10:33:06 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:1136760)
+[2025-06-18 10:33:06 -0500] [1136760] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-18 10:33:06 -0500] [1136760] [INFO] Worker exiting (pid: 1136760)
+[2025-06-18 10:33:06 -0500] [1136784] [INFO] Booting worker with pid: 1136784
+[2025-06-18 16:25:48 -0500] [1136784] [WARNING] Invalid request from ip=91.199.163.12: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-18 18:32:17 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:1030692)
+[2025-06-18 18:32:17 -0500] [1030692] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-18 18:32:17 -0500] [1030692] [INFO] Worker exiting (pid: 1030692)
+[2025-06-18 18:32:17 -0500] [1157024] [INFO] Booting worker with pid: 1157024
+[2025-06-18 19:32:47 -0500] [1136784] [WARNING] Invalid request from ip=91.199.163.12: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-18 19:55:10 -0500] [1157024] [WARNING] Invalid request from ip=45.140.17.107: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-18 23:39:23 -0500] [1157024] [WARNING] Invalid request from ip=91.199.163.12: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-19 01:22:36 -0500] [1136784] [WARNING] Invalid request from ip=45.140.17.107: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-19 02:06:30 -0500] [1157024] [WARNING] Invalid request from ip=3.138.185.30: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-06-19 12:06:46 -0500] [1053020] [WARNING] Invalid request from ip=199.45.154.114: Invalid HTTP Version: (2, 0)
+[2025-06-20 12:27:40 -0500] [1053020] [WARNING] Invalid request from ip=167.94.145.111: Invalid HTTP Version: (2, 0)
+[2025-06-20 12:53:37 -0500] [1157024] [WARNING] Invalid request from ip=147.45.112.101: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-06-20 12:54:33 -0500] [1053020] [WARNING] Invalid request from ip=167.94.138.121: Invalid HTTP Version: (2, 0)
+[2025-06-20 12:55:47 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:1157024)
+[2025-06-20 12:55:47 -0500] [1157024] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-20 12:55:47 -0500] [1157024] [INFO] Worker exiting (pid: 1157024)
+[2025-06-20 12:55:48 -0500] [1262618] [INFO] Booting worker with pid: 1262618
+[2025-06-20 13:52:22 -0500] [679494] [CRITICAL] WORKER TIMEOUT (pid:1136784)
+[2025-06-20 13:52:22 -0500] [1136784] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-20 13:52:22 -0500] [1136784] [INFO] Worker exiting (pid: 1136784)
+[2025-06-20 13:52:22 -0500] [1264651] [INFO] Booting worker with pid: 1264651
+[2025-06-20 15:18:12 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:18:12 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:18:12 -0500] [1268588] [INFO] Booting worker with pid: 1268588
+[2025-06-20 15:18:12 -0500] [1268589] [INFO] Booting worker with pid: 1268589
+[2025-06-20 15:18:12 -0500] [1268590] [INFO] Booting worker with pid: 1268590
+[2025-06-20 15:18:12 -0500] [1264651] [INFO] Worker exiting (pid: 1264651)
+[2025-06-20 15:18:12 -0500] [1053020] [INFO] Worker exiting (pid: 1053020)
+[2025-06-20 15:18:12 -0500] [1262618] [INFO] Worker exiting (pid: 1262618)
+[2025-06-20 15:18:13 -0500] [679494] [ERROR] Worker (pid:1262618) was sent SIGTERM!
+[2025-06-20 15:18:13 -0500] [679494] [ERROR] Worker (pid:1264651) was sent SIGTERM!
+[2025-06-20 15:18:13 -0500] [679494] [ERROR] Worker (pid:1053020) was sent SIGTERM!
+[2025-06-20 15:23:41 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:23:41 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:23:41 -0500] [1268632] [INFO] Booting worker with pid: 1268632
+[2025-06-20 15:23:41 -0500] [1268589] [INFO] Worker exiting (pid: 1268589)
+[2025-06-20 15:23:41 -0500] [1268588] [INFO] Worker exiting (pid: 1268588)
+[2025-06-20 15:23:41 -0500] [1268633] [INFO] Booting worker with pid: 1268633
+[2025-06-20 15:23:41 -0500] [1268590] [INFO] Worker exiting (pid: 1268590)
+[2025-06-20 15:23:41 -0500] [1268634] [INFO] Booting worker with pid: 1268634
+[2025-06-20 15:23:41 -0500] [679494] [ERROR] Worker (pid:1268589) was sent SIGTERM!
+[2025-06-20 15:23:41 -0500] [679494] [ERROR] Worker (pid:1268588) was sent SIGTERM!
+[2025-06-20 15:23:41 -0500] [679494] [ERROR] Worker (pid:1268590) was sent SIGTERM!
+[2025-06-20 15:28:38 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:28:38 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:28:38 -0500] [1269082] [INFO] Booting worker with pid: 1269082
+[2025-06-20 15:28:38 -0500] [1269083] [INFO] Booting worker with pid: 1269083
+[2025-06-20 15:28:38 -0500] [1268632] [INFO] Worker exiting (pid: 1268632)
+[2025-06-20 15:28:38 -0500] [1268633] [INFO] Worker exiting (pid: 1268633)
+[2025-06-20 15:28:38 -0500] [1268634] [INFO] Worker exiting (pid: 1268634)
+[2025-06-20 15:28:38 -0500] [1269084] [INFO] Booting worker with pid: 1269084
+[2025-06-20 15:28:39 -0500] [679494] [ERROR] Worker (pid:1268633) was sent SIGTERM!
+[2025-06-20 15:28:39 -0500] [679494] [ERROR] Worker (pid:1268634) was sent SIGTERM!
+[2025-06-20 15:39:27 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:39:27 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:39:27 -0500] [1269501] [INFO] Booting worker with pid: 1269501
+[2025-06-20 15:39:28 -0500] [1269502] [INFO] Booting worker with pid: 1269502
+[2025-06-20 15:39:28 -0500] [1269082] [INFO] Worker exiting (pid: 1269082)
+[2025-06-20 15:39:28 -0500] [1269083] [INFO] Worker exiting (pid: 1269083)
+[2025-06-20 15:39:28 -0500] [1269084] [INFO] Worker exiting (pid: 1269084)
+[2025-06-20 15:39:28 -0500] [1269503] [INFO] Booting worker with pid: 1269503
+[2025-06-20 15:39:28 -0500] [679494] [ERROR] Worker (pid:1269082) was sent SIGTERM!
+[2025-06-20 15:39:28 -0500] [679494] [ERROR] Worker (pid:1269083) was sent SIGTERM!
+[2025-06-20 15:39:28 -0500] [679494] [ERROR] Worker (pid:1269084) was sent SIGTERM!
+[2025-06-20 15:39:33,359] ERROR in app: Exception on /historiaIOT [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 138, in historia_iot
+    return render_template('historia.html', registros=registros)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/historia.html", line 86, in top-level template code
+    <td>{{ r.fecha.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'r' is undefined
+[2025-06-20 15:39:44,592] ERROR in app: Exception on /historiaIOT [GET]
+Traceback (most recent call last):
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/app.py", line 138, in historia_iot
+    return render_template('historia.html', registros=registros)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/templates/historia.html", line 86, in top-level template code
+    <td>{{ r.fecha.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/benjamin_gutierrez_3011/IOT_Riego/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'r' is undefined
+[2025-06-20 15:42:12 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:42:12 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:42:12 -0500] [1269532] [INFO] Booting worker with pid: 1269532
+[2025-06-20 15:42:12 -0500] [1269533] [INFO] Booting worker with pid: 1269533
+[2025-06-20 15:42:12 -0500] [1269501] [INFO] Worker exiting (pid: 1269501)
+[2025-06-20 15:42:12 -0500] [1269502] [INFO] Worker exiting (pid: 1269502)
+[2025-06-20 15:42:12 -0500] [1269534] [INFO] Booting worker with pid: 1269534
+[2025-06-20 15:42:12 -0500] [1269503] [INFO] Worker exiting (pid: 1269503)
+[2025-06-20 15:42:13 -0500] [679494] [ERROR] Worker (pid:1269502) was sent SIGTERM!
+[2025-06-20 15:42:13 -0500] [679494] [ERROR] Worker (pid:1269501) was sent SIGTERM!
+[2025-06-20 15:42:13 -0500] [679494] [ERROR] Worker (pid:1269503) was sent SIGTERM!
+[2025-06-20 15:46:23 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:46:23 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:46:23 -0500] [1269930] [INFO] Booting worker with pid: 1269930
+[2025-06-20 15:46:23 -0500] [1269931] [INFO] Booting worker with pid: 1269931
+[2025-06-20 15:46:23 -0500] [1269532] [INFO] Worker exiting (pid: 1269532)
+[2025-06-20 15:46:23 -0500] [1269534] [INFO] Worker exiting (pid: 1269534)
+[2025-06-20 15:46:23 -0500] [1269533] [INFO] Worker exiting (pid: 1269533)
+[2025-06-20 15:46:23 -0500] [1269932] [INFO] Booting worker with pid: 1269932
+[2025-06-20 15:52:20 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:52:20 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:52:20 -0500] [1269961] [INFO] Booting worker with pid: 1269961
+[2025-06-20 15:52:20 -0500] [1269962] [INFO] Booting worker with pid: 1269962
+[2025-06-20 15:52:20 -0500] [1269931] [INFO] Worker exiting (pid: 1269931)
+[2025-06-20 15:52:20 -0500] [1269930] [INFO] Worker exiting (pid: 1269930)
+[2025-06-20 15:52:20 -0500] [1269932] [INFO] Worker exiting (pid: 1269932)
+[2025-06-20 15:52:20 -0500] [1269963] [INFO] Booting worker with pid: 1269963
+[2025-06-20 15:58:06 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 15:58:06 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 15:58:06 -0500] [1270361] [INFO] Booting worker with pid: 1270361
+[2025-06-20 15:58:06 -0500] [1269961] [INFO] Worker exiting (pid: 1269961)
+[2025-06-20 15:58:06 -0500] [1270362] [INFO] Booting worker with pid: 1270362
+[2025-06-20 15:58:06 -0500] [1269963] [INFO] Worker exiting (pid: 1269963)
+[2025-06-20 15:58:06 -0500] [1269962] [INFO] Worker exiting (pid: 1269962)
+[2025-06-20 15:58:06 -0500] [1270363] [INFO] Booting worker with pid: 1270363
+[2025-06-20 16:00:53 -0500] [679494] [INFO] Handling signal: hup
+[2025-06-20 16:00:53 -0500] [679494] [INFO] Hang up: Master
+[2025-06-20 16:00:53 -0500] [1270377] [INFO] Booting worker with pid: 1270377
+[2025-06-20 16:00:53 -0500] [1270378] [INFO] Booting worker with pid: 1270378
+[2025-06-20 16:00:53 -0500] [1270361] [INFO] Worker exiting (pid: 1270361)
+[2025-06-20 16:00:53 -0500] [1270362] [INFO] Worker exiting (pid: 1270362)
+[2025-06-20 16:00:53 -0500] [1270363] [INFO] Worker exiting (pid: 1270363)
+[2025-06-20 16:00:53 -0500] [1270379] [INFO] Booting worker with pid: 1270379
+[2025-06-20 16:00:53 -0500] [679494] [ERROR] Worker (pid:1270361) was sent SIGTERM!
+[2025-06-20 16:00:53 -0500] [679494] [ERROR] Worker (pid:1270362) was sent SIGTERM!
+[2025-06-20 16:00:53 -0500] [679494] [ERROR] Worker (pid:1270363) was sent SIGTERM!

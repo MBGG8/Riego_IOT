@@ -2,53 +2,60 @@
 <html lang="es">
 <head>
  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Historial de Datos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-   .navbar-dark {
-      background-color: #1f1f2e;
-    }
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Historial de Datos</title>
 
-    .content-container {
-      margin-top: 20px;
-    }
+ <!-- Bootstrap y tu CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 
-    body { font-family: Arial, sans-serif, padding-bottom: 20px;}
-    h2 { text-align: center; margin-bottom: 20px; }
-    .table-container {
-      overflow-y: auto;
-      max-height: 80vh;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      min-width: 600px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: center;
-    }
-    th {
-      background-color: #f8f8f8;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    @media (max-width: 768px) {
-  	table, th, td { font-size: 14px; }
-    }
+ <style>
+  .navbar-dark {
+    background-color: #1f1f2e;
+  }
 
-</style> 
+  .content-container {
+    margin-top: 20px;
+  }
 
+  body { font-family: Arial, sans-serif; padding-bottom: 20px;}
+  h2 { text-align: center; margin-bottom: 20px; }
+  .table-container {
+    overflow-y: auto;
+    max-height: 80vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+  }
+  th {
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  #cargando {
+    text-align: center;
+    padding: 10px;
+    color: #555;
+  }
+  @media (max-width: 768px) {
+    table, th, td { font-size: 14px; }
+  }
+ </style>
 </head>
+
 <body>
-<!-- NAVBAR -->
+
+<!-- ✅ TU NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">💧 Riego IOT</a>
@@ -68,6 +75,7 @@
   </div>
 </nav>
 
+<!-- ✅ CONTENIDO -->
 <div class="container content-container">
   <h2>Historial de Datos IoT (Hora Lima)</h2>
   <div class="table-container">
@@ -81,22 +89,49 @@
           <th>Luminosidad</th>
         </tr>
       </thead>
-      <tbody>
-        {% for r in registros %}
-        <tr>
-          <td>{{ r.fecha.strftime('%Y-%m-%d %H:%M:%S') }}</td>
-          <td>{{ r.temperatura }}</td>
-          <td>{{ r.humedad_suelo }}</td>
-          <td>{{ r.humedad_ambiental }}</td>
-          <td>{{ r.luminosidad }}</td>
-        </tr>
-        {% endfor %}
+      <tbody id="tabla-registros">
+        <!-- Los registros se cargarán dinámicamente -->
       </tbody>
     </table>
+    <div id="cargando">Cargando datos...</div>
   </div>
-</div>  
+</div>
 
+<!-- Scripts Bootstrap y Scroll infinito -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function cargarTabla() {
+  fetch("/historiaIOT/json")
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.getElementById("tabla-registros");
+      tbody.innerHTML = ""; // Limpiar tabla
+
+      data.forEach(r => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${r.fecha}</td>
+          <td>${r.temperatura}</td>
+          <td>${r.humedad_suelo}</td>
+          <td>${r.humedad_ambiental}</td>
+          <td>${r.luminosidad}</td>
+        `;
+        tbody.appendChild(fila);
+      });
+
+      document.getElementById("cargando").style.display = "none";
+    })
+    .catch(err => {
+      console.error("Error al cargar datos:", err);
+      document.getElementById("cargando").innerText = "Error al cargar datos.";
+    });
+}
+
+// Cargar al inicio y cada 10 segundos
+cargarTabla();
+setInterval(cargarTabla, 10000);
+</script>
+
+
 </body>
 </html>

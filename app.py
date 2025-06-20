@@ -113,29 +113,30 @@ def historico():
 
 @app.route('/historiaIOT')
 def historia_iot():
-     # Definir la zona horaria de Lima
-    zona_lima = pytz.timezone('America/Lima')
- 
-    # Traemos todos los registros ordenados de más nuevo a más antiguo
-    registros_utc = SensorData.query.order_by(SensorData.fecha.desc()).all()
+    # Renderizamos pasando la lista con datetimes de Lima
 
-    # Convertimos cada fecha UTC a Lima
+    return render_template('historia.html')
+
+
+@app.route('/historiaIOT/json')
+def historia_iot_json():
+    zona_lima = pytz.timezone('America/Lima')
+    registros_utc = SensorData.query.order_by(SensorData.fecha.desc()).limit(5000).all()
+
     registros = []
     for r in registros_utc:
-        # Asumimos que r.fecha es naive en UTC
         fecha_utc = r.fecha.replace(tzinfo=pytz.utc)
         fecha_lima = fecha_utc.astimezone(zona_lima)
         registros.append({
-            'fecha': fecha_lima,  # un datetime ya en Lima
+            'fecha': fecha_lima.strftime('%Y-%m-%d %H:%M:%S'),
             'temperatura': r.temperatura,
             'humedad_suelo': r.humedad_suelo,
             'humedad_ambiental': r.humedad_ambiental,
             'luminosidad': r.luminosidad
         })
 
-    # Renderizamos pasando la lista con datetimes de Lima
+    return jsonify(registros)
 
-    return render_template('historia.html', registros=registros)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000, debug=True)
