@@ -3,38 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ESP32 Dashboard</title>
+  <title>Dashboard de Riego Automático</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Tu CSS personalizado -->
   <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+
+    .dashboard-header {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .estado-sistema {
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .form-check-input {
+      width: 3rem;
+      height: 1.5rem;
+      background-color: #dee2e6;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-check-input:checked {
+      background-color: #4caf50;
+    }
+
+    .form-check-input:focus {
+      box-shadow: none;
+    }
+
     .sensor-card {
       height: 120px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin-bottom: 1rem;
+      border-left: 6px solid;
     }
+
+    .sensor-temp { border-color: #ff6b6b; }
+    .sensor-suelo { border-color: #4caf50; }
+    .sensor-amb { border-color: #42a5f5; }
+    .sensor-luz { border-color: #ffa726; }
+
     .chart-card {
       padding: 1rem;
-      background: #fff;
+      background: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       height: 300px;
       margin-bottom: 2rem;
       margin-left: 3rem;
       margin-right: 3rem;
-    }
-    #toggle-btn {
-      width: 200px;
     }
   </style>
 </head>
@@ -63,68 +101,70 @@
   <!-- Contenido -->
   <div class="container py-4">
 
-    <!-- Título -->
-    <h1 class="text-center mb-5">Dashboard de Riego Automático</h1>
-
-    <!-- Tarjetas de sensores -->
-    <div class="row text-center">
-      <div class="col-md-3">
-        <div class="sensor-card text-white bg-danger">
-          <h5>Temperatura (°C)</h5>
-          <p id="temp-value">--</p>
+    <!-- Nueva barra superior con título, estado y switch -->
+    <div class="dashboard-header d-flex justify-content-between align-items-center">
+      <h2 class="m-0">💧 Dashboard de Riego Automático</h2>
+      <div class="d-flex align-items-center gap-3">
+        <div id="sistema-estado" class="estado-sistema text-danger fw-semibold">
+          🔴 Desactivado
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="sensor-card text-white bg-success">
-          <h5>Humedad Suelo (%)</h5>
-          <p id="hum-suelo-value">--</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="sensor-card text-white bg-info">
-          <h5>Humedad Ambiental (%)</h5>
-          <p id="hum-ambiental-value">--</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="sensor-card text-white bg-warning">
-          <h5>Luminosidad (lx)</h5>
-          <p id="luz-value">--</p>
+        <div class="form-check form-switch m-0">
+          <input class="form-check-input" type="checkbox" id="sistema-toggle">
         </div>
       </div>
     </div>
 
-    <!-- Tarjeta de estado de riego -->
-    <div class="row justify-content-center my-4 mb- mb-5">
+    <!-- Tarjetas de sensores -->
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="sensor-card sensor-temp">
+          <h5>Temperatura (°C)</h5>
+          <p id="temp-value" class="fw-bold">--</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sensor-card sensor-suelo">
+          <h5>Humedad Suelo (%)</h5>
+          <p id="hum-suelo-value" class="fw-bold">--</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sensor-card sensor-amb">
+          <h5>Humedad Ambiental (%)</h5>
+          <p id="hum-ambiental-value" class="fw-bold">--</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sensor-card sensor-luz">
+          <h5>Luminosidad (lx)</h5>
+          <p id="luz-value" class="fw-bold">--</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estado de riego -->
+    <div class="row justify-content-center my-4">
       <div class="col-md-6 text-center">
-        <div id="riego-card" class="card text-white">
+        <div id="riego-card" class="card text-white bg-secondary">
           <div class="card-body">
             <h5 class="card-title">Estado de Riego</h5>
             <p id="riego-value" class="display-6">--</p>
-            <button id="toggle-btn" class="btn btn-lg">Cargando...</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Gráficas de histórico -->
+    <!-- Gráficas -->
     <h2 class="text-center mb-4 mt-5">Historial de Datos</h2>
     <div class="container mt-4">
-	<div class="row justify-content-center g-4">
-      <div class="col-md-5 chart-card">
-        <canvas id="tempChart"></canvas>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5 chart-card"><canvas id="tempChart"></canvas></div>
+        <div class="col-md-5 chart-card"><canvas id="humSueloChart"></canvas></div>
+        <div class="col-md-5 chart-card"><canvas id="humAmbChart"></canvas></div>
+        <div class="col-md-5 chart-card"><canvas id="luzChart"></canvas></div>
       </div>
-      <div class="col-md-5 chart-card">
-        <canvas id="humSueloChart"></canvas>
-      </div>
-      <div class="col-md-5 chart-card">
-        <canvas id="humAmbChart"></canvas>
-      </div>
-      <div class="col-md-5 chart-card">
-        <canvas id="luzChart"></canvas>
-      </div>
-	</div>
     </div>
+
   </div>
 
   <!-- Scripts -->
@@ -132,77 +172,80 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-    let overrideState = false;
-    const toggleBtn = document.getElementById('toggle-btn');
-    const riegoCard = document.getElementById('riego-card');
+    let sistemaActivo = false;
+
+    const sistemaToggle = document.getElementById('sistema-toggle');
+    const sistemaEstado = document.getElementById('sistema-estado');
     const riegoText = document.getElementById('riego-value');
+    const riegoCard = document.getElementById('riego-card');
 
-    function updateRiegoCard() {
-      if (overrideState) {
-        toggleBtn.innerText = 'Desactivar Riego';
-        toggleBtn.className = 'btn btn-danger';
-        riegoCard.className = 'card text-white bg-success';
-        riegoText.innerText = 'Activo';
-      } else {
-        toggleBtn.innerText = 'Activar Riego';
-        toggleBtn.className = 'btn btn-success';
-        riegoCard.className = 'card text-white bg-danger';
-        riegoText.innerText = 'Inactivo';
-      }
+    function actualizarSistemaUI() {
+      sistemaToggle.checked = sistemaActivo;
+      sistemaEstado.innerText = sistemaActivo ? '🟢 Activado' : '🔴 Desactivado';
+      sistemaEstado.classList.toggle('text-success', sistemaActivo);
+      sistemaEstado.classList.toggle('text-danger', !sistemaActivo);
     }
 
-    async function fetchOverride() {
-      const endpoint = '/estado';
-      console.log(`Consultando endpoint: ${endpoint}`);
+    sistemaToggle.addEventListener('change', async () => {
+      const nuevoEstado = sistemaToggle.checked;
       try {
-        const res = await fetch(endpoint);
-        const { activar } = await res.json();
-        overrideState = activar;
-        updateRiegoCard();
-      } catch {
-        console.warn(`Error obteniendo estado desde ${endpoint}`);
-      }
-    }
-
-    toggleBtn.addEventListener('click', async () => {
-      const endpoint = '/riego';
-      const payload = { activar: !overrideState };
-      console.log(`Llamando endpoint: ${endpoint} con payload:`, payload);
-      try {
-        await fetch(endpoint, {
+        await fetch('/sistema', {
           method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ activo: nuevoEstado })
         });
-        await fetchOverride();
+        await obtenerEstadoSistema();
       } catch {
-        console.error(`Error llamando a ${endpoint}`);
+        console.error('Error actualizando estado del sistema');
       }
     });
 
-    async function fetchSensorData() {
+    async function obtenerEstadoSistema() {
+      try {
+        const res = await fetch('/sistema');
+        const { activo } = await res.json();
+        sistemaActivo = activo;
+        actualizarSistemaUI();
+      } catch {
+        console.warn('Error obteniendo estado del sistema');
+      }
+    }
+
+    async function obtenerEstadoRiego() {
+      try {
+        const res = await fetch('/estado');
+        const { activar } = await res.json();
+        const activo = activar && sistemaActivo;
+        riegoText.innerText = activo ? 'Activo' : 'Inactivo';
+        riegoCard.className = activo ? 'card text-white bg-success' : 'card text-white bg-secondary';
+      } catch {
+        console.warn('No se pudo obtener el estado de riego');
+      }
+    }
+
+    async function obtenerSensores() {
       try {
         const res = await fetch('/data');
         const d = await res.json();
         if (d.temperatura !== undefined) {
-          document.getElementById('temp-value').innerText       = d.temperatura;
+          document.getElementById('temp-value').innerText = d.temperatura;
           document.getElementById('hum-suelo-value').innerText = d.humedad_suelo;
           document.getElementById('hum-ambiental-value').innerText = d.humedad_ambiental;
-          document.getElementById('luz-value').innerText        = d.luminosidad;
+          document.getElementById('luz-value').innerText = d.luminosidad;
         }
       } catch {
-        console.warn('No se recibieron datos de sensores');
+        console.warn('Error obteniendo sensores');
       }
     }
 
     let charts = {};
-    async function fetchHistorico() {
+    async function obtenerHistorico() {
       try {
         const res = await fetch('/historico');
         const data = await res.json();
         const labels = data.map(x => x.timestamp);
 
-        function makeConfig(label, arr, color) {
+        function config(label, arr, color) {
           return {
             type: 'line',
             data: { labels, datasets: [{ label, data: arr, borderColor: color, fill: false }] },
@@ -211,10 +254,10 @@
         }
 
         if (!charts.temp) {
-          charts.temp  = new Chart(document.getElementById('tempChart'), makeConfig('Temperatura (°C)', data.map(x => x.temperatura), 'red'));
-          charts.suelo = new Chart(document.getElementById('humSueloChart'), makeConfig('Humedad Suelo (%)', data.map(x => x.humedad_suelo), 'green'));
-          charts.amb   = new Chart(document.getElementById('humAmbChart'), makeConfig('Humedad Ambiental (%)', data.map(x => x.humedad_ambiental), 'blue'));
-          charts.luz   = new Chart(document.getElementById('luzChart'), makeConfig('Luminosidad (lx)', data.map(x => x.luminosidad), 'orange'));
+          charts.temp  = new Chart(document.getElementById('tempChart'), config('Temperatura (°C)', data.map(x => x.temperatura), '#ff6b6b'));
+          charts.suelo = new Chart(document.getElementById('humSueloChart'), config('Humedad Suelo (%)', data.map(x => x.humedad_suelo), '#4caf50'));
+          charts.amb   = new Chart(document.getElementById('humAmbChart'), config('Humedad Ambiental (%)', data.map(x => x.humedad_ambiental), '#42a5f5'));
+          charts.luz   = new Chart(document.getElementById('luzChart'), config('Luminosidad (lx)', data.map(x => x.luminosidad), '#ffa726'));
         } else {
           charts.temp.data.labels = labels;
           charts.temp.data.datasets[0].data = data.map(x => x.temperatura);
@@ -234,15 +277,16 @@
       }
     }
 
-    // Inicialización y refresco periódico
     (async () => {
-      await fetchOverride();
-      await fetchSensorData();
-      await fetchHistorico();
+      await obtenerEstadoSistema();
+      await obtenerEstadoRiego();
+      await obtenerSensores();
+      await obtenerHistorico();
       setInterval(async () => {
-        await fetchOverride();
-        await fetchSensorData();
-        await fetchHistorico();
+        await obtenerEstadoSistema();
+        await obtenerEstadoRiego();
+        await obtenerSensores();
+        await obtenerHistorico();
       }, 10000);
     })();
   </script>

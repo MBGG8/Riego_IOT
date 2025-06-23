@@ -22,12 +22,23 @@ class SensorData(db.Model):
 
 class RiegoEstado(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    activar = db.Column(db.Boolean, nullable=False)
+    activar = db.Column(db.Boolean, nullable=False)  # Estado del riego (activo/inactivo)
+    fecha = db.Column(db.DateTime, default=datetime.utcnow)
+
+class SistemaEstado(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    activo = db.Column(db.Boolean, nullable=False)  # Activar o desactivar sistema
     fecha = db.Column(db.DateTime, default=datetime.utcnow)
 
 with app.app_context():
     db.create_all()
+    # Asegurar que haya un estado inicial del sistema
+    if SistemaEstado.query.first() is None:
+        estado_inicial = SistemaEstado(activo=False)
+        db.session.add(estado_inicial)
+        db.session.commit()
 
+# Utilidad: JSON sin caché
 def nocache_json(data, status=200):
     resp = make_response(jsonify(data), status)
     resp.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
@@ -35,6 +46,7 @@ def nocache_json(data, status=200):
     resp.headers['Expires'] = '0'
     return resp
 
+# Página principal
 @app.route('/')
 def index():
     return render_template('dashboard.html')
@@ -62,25 +74,7 @@ def update():
         logging.error(e)
         return nocache_json({"error": str(e)}, 500)
 
-# Devuelve el override (estado del botón)
-@app.route('/estado', methods=['GET'])
-def estado():
-    ultimo = RiegoEstado.query.order_by(RiegoEstado.fecha.desc()).first()
-    return nocache_json({"activar": bool(ultimo.activar) if ultimo else False})
-
-# Cambia override desde el dashboard
-@app.route('/riego', methods=['POST'])
-def riego():
-    data = request.get_json(force=True)
-    if 'activar' not in data:
-        return nocache_json({"error": "Falta 'activar'"}, 400)
-    estado = bool(data['activar'])
-    re = RiegoEstado(activar=estado)
-    db.session.add(re)
-    db.session.commit()
-    return nocache_json({"status": "override actualizado", "activar": estado})
-
-# Últimos datos para la card
+# Últimos datos para el dashboard
 @app.route('/data', methods=['GET'])
 def get_data():
     ultimo = SensorData.query.order_by(SensorData.fecha.desc()).first()
@@ -93,7 +87,7 @@ def get_data():
         "luminosidad": ultimo.luminosidad
     })
 
-# Histórico para gráficas
+# Histórico de sensores para gráficas
 @app.route('/historico', methods=['GET'])
 def historico():
     regs = SensorData.query.order_by(SensorData.fecha.desc()).limit(100).all()
@@ -111,18 +105,14 @@ def historico():
         })
     return nocache_json(out)
 
+# Página de historial
 @app.route('/historiaIOT')
 def historia_iot():
-    # Renderizamos pasando la lista con datetimes de Lima
-
     return render_template('historia.html')
-
 
 @app.route('/historiaIOT/json')
 def historia_iot_json():
-    zona_lima = pytz.timezone('America/Lima')
     registros_utc = SensorData.query.order_by(SensorData.fecha.desc()).limit(5000).all()
-
     registros = []
     for r in registros_utc:
         fecha_utc = r.fecha.replace(tzinfo=pytz.utc)
@@ -134,9 +124,31 @@ def historia_iot_json():
             'humedad_ambiental': r.humedad_ambiental,
             'luminosidad': r.luminosidad
         })
-
     return jsonify(registros)
 
+# 🔁 Estado actual del riego (para frontend)
+@app.route('/estado', methods=['GET'])
+def estado():
+    ultimo = RiegoEstado.query.order_by(RiegoEstado.fecha.desc()).first()
+    return nocache_json({"activar": bool(ultimo.activar) if ultimo else False})
+
+# 🔁 Estado actual del sistema (para ESP32 y frontend)
+@app.route('/sistema', methods=['GET'])
+def get_sistema():
+    ultimo = SistemaEstado.query.order_by(SistemaEstado.fecha.desc()).first()
+    return nocache_json({"activo": bool(ultimo.activo) if ultimo else False})
+
+# 🔁 Cambiar estado del sistema desde el dashboard
+@app.route('/sistema', methods=['POST'])
+def set_sistema():
+    data = request.get_json(force=True)
+    if 'activo' not in data:
+        return nocache_json({"error": "Falta 'activo'"}, 400)
+    nuevo_estado = bool(data['activo'])
+    nuevo = SistemaEstado(activo=nuevo_estado)
+    db.session.add(nuevo)
+    db.session.commit()
+    return nocache_json({"status": "estado sistema actualizado", "activo": nuevo_estado})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000, debug=True)
