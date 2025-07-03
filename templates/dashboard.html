@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dashboard de Riego Automático</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -25,9 +24,63 @@
       margin-bottom: 2rem;
     }
 
-    .estado-sistema {
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
+    .gauge-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .gauge-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .gauge-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #495057;
+    }
+
+    .gauge-canvas {
+      position: relative;
+    }
+
+    .gauge-value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      font-weight: bold;
+      color: #212529;
+    }
+
+    .control-panel {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .control-section {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+    }
+
+    .switch-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
 
     .form-check-input {
@@ -42,27 +95,45 @@
       background-color: #4caf50;
     }
 
-    .form-check-input:focus {
-      box-shadow: none;
+    .status-badge {
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
-    .sensor-card {
-      height: 120px;
-      border-radius: 10px;
+    .status-active {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status-inactive {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .riego-estado-card {
       background-color: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
-      border-left: 6px solid;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
-    .sensor-temp { border-color: #ff6b6b; }
-    .sensor-suelo { border-color: #4caf50; }
-    .sensor-amb { border-color: #42a5f5; }
-    .sensor-luz { border-color: #ffa726; }
+    .btn-riego {
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      margin: 5px;
+    }
+
+    .btn-riego:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
     .chart-card {
       padding: 1rem;
@@ -78,7 +149,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">💧 Riego IOT</a>
@@ -98,63 +168,114 @@
     </div>
   </nav>
 
-  <!-- Contenido -->
   <div class="container py-4">
 
-    <!-- Nueva barra superior con título, estado y switch -->
-    <div class="dashboard-header d-flex justify-content-between align-items-center">
-      <h2 class="m-0">💧 Dashboard de Riego Automático</h2>
-      <div class="d-flex align-items-center gap-3">
-        <div id="sistema-estado" class="estado-sistema text-danger fw-semibold">
-          🔴 Desactivado
+    <div class="dashboard-header text-center">
+      <h2 class="m-0">💧 Dashboard de Riego Automático ESP32</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="gauge-card">
+          <div class="gauge-title">Temperatura</div>
+          <div class="gauge-container">
+            <canvas id="tempGauge" width="200" height="200" class="gauge-canvas"></canvas>
+            <div id="temp-value" class="gauge-value">0</div>
+          </div>
+          <div style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">°C</div>
         </div>
-        <div class="form-check form-switch m-0">
-          <input class="form-check-input" type="checkbox" id="sistema-toggle">
+      </div>
+      <div class="col-md-3">
+        <div class="gauge-card">
+          <div class="gauge-title">Humedad del Suelo</div>
+          <div class="gauge-container">
+            <canvas id="humSueloGauge" width="200" height="200" class="gauge-canvas"></canvas>
+            <div id="hum-suelo-value" class="gauge-value">0</div>
+          </div>
+          <div style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">%</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="gauge-card">
+          <div class="gauge-title">Humedad Ambiental</div>
+          <div class="gauge-container">
+            <canvas id="humAmbGauge" width="200" height="200" class="gauge-canvas"></canvas>
+            <div id="hum-ambiental-value" class="gauge-value">0</div>
+          </div>
+          <div style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">%</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="gauge-card">
+          <div class="gauge-title">Luminosidad</div>
+          <div class="gauge-container">
+            <canvas id="luzGauge" width="200" height="200" class="gauge-canvas"></canvas>
+            <div id="luz-value" class="gauge-value">0</div>
+          </div>
+          <div style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">lx</div>
         </div>
       </div>
     </div>
 
-    <!-- Tarjetas de sensores -->
-    <div class="row text-center">
-      <div class="col-md-3">
-        <div class="sensor-card sensor-temp">
-          <h5>Temperatura (°C)</h5>
-          <p id="temp-value" class="fw-bold">--</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="sensor-card sensor-suelo">
-          <h5>Humedad Suelo (%)</h5>
-          <p id="hum-suelo-value" class="fw-bold">--</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="sensor-card sensor-amb">
-          <h5>Humedad Ambiental (%)</h5>
-          <p id="hum-ambiental-value" class="fw-bold">--</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="sensor-card sensor-luz">
-          <h5>Luminosidad (lx)</h5>
-          <p id="luz-value" class="fw-bold">--</p>
-        </div>
-      </div>
-    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="control-panel">
+          <h4 class="mb-4">Control del Sistema</h4>
 
-    <!-- Estado de riego -->
-    <div class="row justify-content-center my-4">
-      <div class="col-md-6 text-center">
-        <div id="riego-card" class="card text-white bg-secondary">
-          <div class="card-body">
-            <h5 class="card-title">Estado de Riego</h5>
-            <p id="riego-value" class="display-6">--</p>
+          <div class="control-section">
+            <div class="switch-container">
+              <div>
+                <strong>Sistema Principal</strong>
+                <div id="sistema-estado" class="status-badge status-inactive">🔴 Desactivado</div>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="sistema-toggle">
+              </div>
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="switch-container">
+              <div>
+                <strong>Riego Automático</strong>
+                <div id="riego-auto-estado" class="status-badge status-inactive">🔴 Desactivado</div>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="riego-auto-toggle">
+              </div>
+            </div>
+            <small class="text-muted">El sistema decide automáticamente cuándo regar basado en los sensores</small>
+          </div>
+
+          <div class="control-section">
+            <div class="switch-container">
+              <div>
+                <strong>Riego Manual</strong>
+                <div id="riego-manual-estado" class="status-badge status-inactive">🔴 Inactivo</div>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="riego-manual-toggle" disabled>
+              </div>
+            </div>
+            <small class="text-muted">Control manual del riego (solo disponible cuando el automático está desactivado)</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="riego-estado-card">
+          <h4>Estado de Riego</h4>
+          <div id="riego-general-estado" class="status-badge status-inactive" style="font-size: 1.2rem; padding: 10px 20px; margin: 20px 0;">
+            🔴 Inactivo
+          </div>
+          <div style="font-size: 0.9rem; color: #6c757d;">
+            Estado actual del sistema de riego
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Gráficas -->
+
     <h2 class="text-center mb-4 mt-5">Historial de Datos</h2>
     <div class="container mt-4">
       <div class="row justify-content-center g-4">
@@ -164,28 +285,124 @@
         <div class="col-md-5 chart-card"><canvas id="luzChart"></canvas></div>
       </div>
     </div>
-
   </div>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
     let sistemaActivo = false;
+    let riegoAutoActivo = false;
+    let riegoManualActivo = false;
 
+    // Elementos del DOM
     const sistemaToggle = document.getElementById('sistema-toggle');
     const sistemaEstado = document.getElementById('sistema-estado');
-    const riegoText = document.getElementById('riego-value');
-    const riegoCard = document.getElementById('riego-card');
+    const riegoAutoToggle = document.getElementById('riego-auto-toggle');
+    const riegoAutoEstado = document.getElementById('riego-auto-estado');
+    const riegoManualToggle = document.getElementById('riego-manual-toggle');
+    const riegoManualEstado = document.getElementById('riego-manual-estado');
+    const riegoGeneralEstado = document.getElementById('riego-general-estado');
 
+    // Función para crear medidores circulares
+    function createGauge(canvasId, value, max, color) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = 70;
+      // Limpiar canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Fondo del medidor
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0.75 * Math.PI, 0.25 * Math.PI);
+      ctx.lineWidth = 15;
+      ctx.strokeStyle = '#e9ecef';
+      ctx.stroke();
+
+      // Progreso del medidor
+      const progress = Math.min(value / max, 1);
+      const endAngle = 0.75 * Math.PI + (progress * 1.5 * Math.PI);
+
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0.75 * Math.PI, endAngle);
+      ctx.lineWidth = 15;
+      ctx.strokeStyle = color;
+      ctx.stroke();
+    }
+
+    // Actualizar medidores
+    function actualizarMedidores(datos) {
+      if (datos.temperatura !== undefined) {
+        document.getElementById('temp-value').innerText = datos.temperatura || 0;
+        createGauge('tempGauge', datos.temperatura || 0, 100, '#ff6b6b');
+
+        document.getElementById('hum-suelo-value').innerText = datos.humedad_suelo || 0;
+        createGauge('humSueloGauge', datos.humedad_suelo || 0, 100, '#4caf50');
+        document.getElementById('hum-ambiental-value').innerText = datos.humedad_ambiental || 0;
+        createGauge('humAmbGauge', datos.humedad_ambiental || 0, 100, '#42a5f5');
+
+        document.getElementById('luz-value').innerText = datos.luminosidad || 0;
+        createGauge('luzGauge', datos.luminosidad || 0, 1000, '#ffa726');
+      }
+    }
+
+    // Actualizar UI del sistema
     function actualizarSistemaUI() {
       sistemaToggle.checked = sistemaActivo;
       sistemaEstado.innerText = sistemaActivo ? '🟢 Activado' : '🔴 Desactivado';
-      sistemaEstado.classList.toggle('text-success', sistemaActivo);
-      sistemaEstado.classList.toggle('text-danger', !sistemaActivo);
+      sistemaEstado.className = sistemaActivo ? 'status-badge status-active' : 'status-badge status-inactive';
+      // Habilitar/deshabilitar controles de riego según estado del sistema
+      riegoAutoToggle.disabled = !sistemaActivo;
+      riegoManualToggle.disabled = !sistemaActivo || riegoAutoActivo;
     }
 
+    // Actualizar UI del riego automático
+    function actualizarRiegoAutoUI() {
+      riegoAutoToggle.checked = riegoAutoActivo;
+      riegoAutoEstado.innerText = riegoAutoActivo ? '🟢 Activado' : '🔴 Desactivado';
+      riegoAutoEstado.className = riegoAutoActivo ? 'status-badge status-active' : 'status-badge status-inactive';
+      // Solo permitir riego manual si automático está desactivado
+      riegoManualToggle.disabled = !sistemaActivo || riegoAutoActivo;
+      if (riegoAutoActivo) {
+        riegoManualActivo = false; // Ensure manual is off if auto is on
+        actualizarRiegoManualUI();
+      }
+    }
+
+    // Actualizar UI del riego manual
+    function actualizarRiegoManualUI() {
+      riegoManualToggle.checked = riegoManualActivo;
+      riegoManualEstado.innerText = riegoManualActivo ? '🟢 Activo' : '🔴 Inactivo';
+      riegoManualEstado.className = riegoManualActivo ? 'status-badge status-active' : 'status-badge status-inactive';
+    }
+
+    // Actualizar estado general de riego
+    function actualizarEstadoGeneralRiego() {
+      let estadoRiego = false;
+      let textoEstado = '🔴 Inactivo';
+
+      if (sistemaActivo) {
+        if (riegoAutoActivo) {
+          // Obtener estado desde el servidor (ESP32)
+          obtenerEstadoRiego().then(estado => {
+            estadoRiego = estado;
+            textoEstado = estadoRiego ? '🟢 Activo (Automático)' : '🔴 Inactivo (Automático)';
+            riegoGeneralEstado.innerText = textoEstado;
+            riegoGeneralEstado.className = estadoRiego ? 'status-badge status-active' : 'status-badge status-inactive';
+          });
+          return; // Exit to avoid immediate update with potentially stale data
+        } else if (riegoManualActivo) {
+          estadoRiego = true;
+          textoEstado = '🟢 Activo (Manual)';
+        }
+      }
+
+      riegoGeneralEstado.innerText = textoEstado;
+      riegoGeneralEstado.className = estadoRiego ? 'status-badge status-active' : 'status-badge status-inactive';
+    }
+
+    // Event listeners
     sistemaToggle.addEventListener('change', async () => {
       const nuevoEstado = sistemaToggle.checked;
       try {
@@ -194,20 +411,71 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ activo: nuevoEstado })
         });
-        await obtenerEstadoSistema();
-      } catch {
-        console.error('Error actualizando estado del sistema');
+        await obtenerEstadoSistema(); // Re-fetch to confirm and update UI
+        actualizarEstadoGeneralRiego();
+      } catch(error) {
+        console.error('Error actualizando estado del sistema:', error);
       }
     });
 
+    // Evento para activar/desactivar automático
+    riegoAutoToggle.addEventListener('change', async () => {
+        const nuevoEstado = riegoAutoToggle.checked;
+        try {
+            await fetch('/riego-auto', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({auto: nuevoEstado})
+            });
+
+            // Update local state and UI for both toggles
+            riegoAutoActivo = nuevoEstado;
+            if (nuevoEstado) { // If auto is activated, manual must be off
+                riegoManualActivo = false;
+            }
+            actualizarRiegoAutoUI();
+            actualizarRiegoManualUI(); // Update manual UI as well
+            actualizarEstadoGeneralRiego();
+        } catch (error) {
+            console.error('Error:', error);
+            riegoAutoToggle.checked = !nuevoEstado; // Revert toggle if error
+        }
+    });
+
+    // Evento para activar/desactivar manual
+    riegoManualToggle.addEventListener('change', async () => {
+        const nuevoEstado = riegoManualToggle.checked;
+        try {
+            await fetch('/riego-manual', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({activar: nuevoEstado})
+            });
+
+            // Update local state and UI for both toggles
+            riegoManualActivo = nuevoEstado;
+            if (nuevoEstado) { // If manual is activated, auto must be off
+                riegoAutoActivo = false;
+            }
+            actualizarRiegoManualUI();
+            actualizarRiegoAutoUI(); // Update auto UI as well
+            actualizarEstadoGeneralRiego();
+        } catch (error) {
+            console.error('Error:', error);
+            riegoManualToggle.checked = !nuevoEstado; // Revert toggle if error
+        }
+    });
+
+    // Funciones para obtener datos del servidor
     async function obtenerEstadoSistema() {
       try {
         const res = await fetch('/sistema');
         const { activo } = await res.json();
         sistemaActivo = activo;
         actualizarSistemaUI();
-      } catch {
-        console.warn('Error obteniendo estado del sistema');
+        // Do not call actualizarEstadoGeneralRiego here directly, as it depends on other states
+      } catch(error) {
+        console.warn('Error obteniendo estado del sistema:', error);
       }
     }
 
@@ -215,36 +483,54 @@
       try {
         const res = await fetch('/estado');
         const { activar } = await res.json();
-        const activo = activar && sistemaActivo;
-        riegoText.innerText = activo ? 'Activo' : 'Inactivo';
-        riegoCard.className = activo ? 'card text-white bg-success' : 'card text-white bg-secondary';
-      } catch {
-        console.warn('No se pudo obtener el estado de riego');
+        return activar;
+      } catch(error) {
+        console.warn('No se pudo obtener el estado de riego:', error);
+        return false;
+      }
+    }
+
+    async function obtenerEstadoRiegoManual() {
+      try {
+        const res = await fetch('/riego-manual');
+        const { activar } = await res.json();
+        riegoManualActivo = activar;
+        actualizarRiegoManualUI();
+        // Do not call actualizarEstadoGeneralRiego here directly
+      } catch(error) {
+        console.warn('Error obteniendo estado del riego manual:', error);
+      }
+    }
+
+    async function obtenerRiegoAuto() {
+      try {
+        const res = await fetch('/riego-auto');
+        const { auto } = await res.json();
+        riegoAutoActivo = auto;
+        actualizarRiegoAutoUI();
+        // Do not call actualizarEstadoGeneralRiego here directly
+      } catch(error) {
+        console.warn('Error obteniendo estado del riego automático:', error);
       }
     }
 
     async function obtenerSensores() {
       try {
         const res = await fetch('/data');
-        const d = await res.json();
-        if (d.temperatura !== undefined) {
-          document.getElementById('temp-value').innerText = d.temperatura;
-          document.getElementById('hum-suelo-value').innerText = d.humedad_suelo;
-          document.getElementById('hum-ambiental-value').innerText = d.humedad_ambiental;
-          document.getElementById('luz-value').innerText = d.luminosidad;
-        }
-      } catch {
-        console.warn('Error obteniendo sensores');
+        const datos = await res.json();
+        actualizarMedidores(datos);
+      } catch(error) {
+        console.warn('Error obteniendo sensores:', error);
       }
     }
 
+    // Charts
     let charts = {};
     async function obtenerHistorico() {
       try {
         const res = await fetch('/historico');
         const data = await res.json();
         const labels = data.map(x => x.timestamp);
-
         function config(label, arr, color) {
           return {
             type: 'line',
@@ -272,22 +558,35 @@
           charts.luz.data.datasets[0].data = data.map(x => x.luminosidad);
           charts.luz.update();
         }
-      } catch {
-        console.warn('Error obteniendo histórico');
+      } catch(error) {
+        console.warn('Error obteniendo histórico:', error);
       }
     }
 
+    // Inicialización
     (async () => {
+      // Crear medidores iniciales
+      actualizarMedidores({});
+
       await obtenerEstadoSistema();
-      await obtenerEstadoRiego();
+      await obtenerRiegoAuto();      
+      await obtenerEstadoRiegoManual(); // Ensure manual state is fetched after auto
+
+      // After all individual states are fetched, update the general state
+      actualizarEstadoGeneralRiego();
+
       await obtenerSensores();
       await obtenerHistorico();
+
+      // Actualizar cada 5 segundos
       setInterval(async () => {
         await obtenerEstadoSistema();
-        await obtenerEstadoRiego();
+        await obtenerRiegoAuto();      
+        await obtenerEstadoRiegoManual();
         await obtenerSensores();
         await obtenerHistorico();
-      }, 10000);
+        actualizarEstadoGeneralRiego(); // Update general status after all individual states are refreshed
+      }, 5000);
     })();
   </script>
 </body>
